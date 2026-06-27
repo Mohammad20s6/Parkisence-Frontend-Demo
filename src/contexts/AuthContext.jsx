@@ -3,7 +3,6 @@ import { createContext, useContext, useReducer, useEffect } from "react";
 import i18n from "../i18n";
 
 import authService from "../api/authService";
-
 import patientService from "../api/patientService";
 
 const AuthContext = createContext();
@@ -62,18 +61,15 @@ function AuthProvider({ children }) {
 
   async function fetchCurrentUser() {
     try {
-      const user = await authService.getCurrentUser();
-
-      if (!user) {
-        dispatch({ type: "stopLoading" });
-        return;
-      }
+      const result = await authService.getCurrentUser();
 
       dispatch({
         type: "setUser",
-        payload: user,
+        payload: result.data.data,
       });
-    } catch {
+      console.log("CURRENT USER", result.data);
+    } catch (err) {
+      authService.logout();
       dispatch({ type: "logout" });
     }
   }
@@ -85,21 +81,16 @@ function AuthProvider({ children }) {
       await fetchCurrentUser();
     } catch (err) {
       console.error("Login error:", err);
-
       throw err;
     }
   }
   function logout() {
     authService.logout();
-
-    dispatch({
-      type: "logout",
-    });
+    dispatch({ type: "logout" });
   }
-
   async function register(email, password, fullName) {
     try {
-      if (!fullName || !fullName.trim()) {
+      if (!fullName.trim()) {
         throw new Error(i18n.t("auth.errors.fullNameRequired"));
       }
 
@@ -112,11 +103,9 @@ function AuthProvider({ children }) {
       await fetchCurrentUser();
     } catch (err) {
       console.error("Register error:", err);
-
       throw err;
     }
   }
-
   function setUser(updatedData) {
     dispatch({
       type: "updateUser",
@@ -129,51 +118,12 @@ function AuthProvider({ children }) {
       throw new Error(i18n.t("auth.errors.noUser"));
     }
 
-    try {
-      const userData = {};
-      const patientData = {};
+    const result = await authService.updateUser(user._id, updatedData);
 
-      if ("name" in updatedData) userData.name = updatedData.name;
-      if ("email" in updatedData) userData.email = updatedData.email;
-
-      if ("phone" in updatedData) patientData.phone = updatedData.phone;
-      if ("gender" in updatedData) patientData.gender = updatedData.gender;
-      if ("birthDate" in updatedData)
-        patientData.birthDate = updatedData.birthDate;
-
-      let updatedUser = null;
-
-      if (Object.keys(userData).length > 0) {
-        const response = await authService.updateUser(user._id, userData);
-
-        updatedUser = response.data.data;
-      }
-
-      let updatedPatient = null;
-
-      if (Object.keys(patientData).length > 0) {
-        const patientResponse = await patientService.updatePatient(
-          user._id,
-          patientData,
-        );
-
-        updatedPatient = patientResponse.data.patient;
-      }
-
-      dispatch({
-        type: "updateUser",
-        payload: {
-          ...(updatedUser || {}),
-          ...(updatedPatient && {
-            patientProfile: updatedPatient,
-          }),
-        },
-      });
-    } catch (err) {
-      console.error(err);
-
-      throw new Error(i18n.t("auth.errors.failedUpdate"));
-    }
+    dispatch({
+      type: "updateUser",
+      payload: result.data.data,
+    });
   }
 
   useEffect(() => {

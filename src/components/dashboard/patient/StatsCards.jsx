@@ -9,8 +9,9 @@ import {
 
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import axios from "axios";
-
+import testService from "../../../api/testService";
+import Loading from "../../ui/Loading";
+import ErrorAlert from "../../ui/ErrorAlert";
 function StatsCards() {
   const { t, i18n } = useTranslation();
 
@@ -28,40 +29,42 @@ function StatsCards() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const fetchStats = async () => {
+    async function fetchStats() {
       try {
         setIsLoading(true);
+        setError("");
 
-        const token = localStorage.getItem("token");
+        const response = await testService.getMyStats();
 
-        const response = await axios.get(
-          "http://127.0.0.1:3000/api/tests/my-stats",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          },
-        );
+        const data = response.data;
 
-        setStats(response.data.data);
+        const testsResponse = await testService.getMyTests();
+
+        const tests = testsResponse.data.tests;
+
+        setStats({
+          totalTests: data.totalTests,
+          healthyCount: data.healthy,
+          parkinsonCount: data.parkinson,
+          lastTestDate: tests.length > 0 ? tests[0].createdAt : "-",
+        });
       } catch (err) {
         console.error("Stats error:", err);
-
-        setError("Failed to load statistics");
+        setError(err.message || "Failed to load statistics");
       } finally {
         setIsLoading(false);
       }
-    };
+    }
 
     fetchStats();
   }, []);
 
   if (isLoading) {
-    return <p className={styles.loading}>Loading...</p>;
+    return <Loading />;
   }
 
   if (error) {
-    return <p className={styles.error}>{error}</p>;
+    return <ErrorAlert error={error} />;
   }
 
   return (

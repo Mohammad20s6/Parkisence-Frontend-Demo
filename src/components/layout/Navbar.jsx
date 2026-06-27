@@ -239,7 +239,9 @@ function Navbar() {
               >
                 <UserCircle className={styles.userIcon} />
                 <span className={styles.userName}>
-                  {user.name.length > 9 ? user.name.slice(0, 9) : user.name}
+                  {user?.name?.length > 9
+                    ? user?.name?.slice(0, 9)
+                    : user?.name}
                 </span>
                 <ChevronDown size={16} />
               </NavLink>

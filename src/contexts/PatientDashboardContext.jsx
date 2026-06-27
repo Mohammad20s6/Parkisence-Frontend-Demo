@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 
 import { useAuth } from "./AuthContext";
-
+import testService from "../api/testService";
 const PatientDashboardContext = createContext();
 
 const initialState = {
@@ -63,39 +63,20 @@ function PatientDashboardProvider({ children }) {
 
   const { user } = useAuth();
 
-  // الفونكشن الأساسية القديمة
   async function fetchDashboardData() {
     try {
       dispatch({
         type: "FETCH_START",
       });
 
-      const token = localStorage.getItem("token");
+      const response = await testService.getMyTests();
 
-      if (!token) {
-        throw new Error("Unauthorized");
-      }
+      const tests = response.data.tests || [];
 
-      const response = await fetch("http://127.0.0.1:3000/api/tests/my-tests", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.message || "Failed to fetch dashboard");
-      }
-
-      const tests = result.data.tests || [];
-
-      // ترتيب الأحدث أولاً
       const sortedTests = [...tests].sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
       );
 
-      // تنسيق البيانات
       const formattedTests = sortedTests.map((test) => ({
         id: test._id,
 
@@ -107,7 +88,7 @@ function PatientDashboardProvider({ children }) {
 
         pattern: test.activePattern,
 
-        confidence: test.confidence || null,
+        confidence: test.confidence,
 
         createdAt: test.createdAt,
 
@@ -158,7 +139,6 @@ function PatientDashboardProvider({ children }) {
       });
     }
   }
-
   // الفونكشن الجديدة للتحديث اليدوي
   async function refreshDashboard() {
     await fetchDashboardData();

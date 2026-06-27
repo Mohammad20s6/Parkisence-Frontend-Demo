@@ -81,10 +81,9 @@ const authService = {
     users.push(newUser);
 
     saveUsers(users);
-
     const patients = getPatients();
 
-    patients.push({
+    const newPatient = {
       _id: generateId(),
 
       user: newUser._id,
@@ -98,7 +97,9 @@ const authService = {
       createdAt: now,
 
       updatedAt: now,
-    });
+    };
+
+    patients.push(newPatient);
 
     savePatients(patients);
 
@@ -126,8 +127,20 @@ const authService = {
       throw new Error("Unauthorized");
     }
 
+    const patients = getPatients();
+
+    const patientProfile = patients.find((p) => p.user === user._id);
+
+    const currentUser = {
+      ...removePassword(user),
+      patientProfile: patientProfile || null,
+    };
+
+    storageService.saveCollection(STORAGE_KEYS.CURRENT_USER, currentUser);
+    console.log("USER =", user);
+    console.log("PATIENT =", patientProfile);
     return successResponse({
-      data: removePassword(user),
+      data: currentUser,
     });
   },
 
@@ -157,6 +170,8 @@ const authService = {
 
   logout() {
     localStorage.removeItem("token");
+
+    storageService.clearCollection(STORAGE_KEYS.CURRENT_USER);
   },
 
   getToken() {

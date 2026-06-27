@@ -5,10 +5,10 @@ import { User } from "lucide-react";
 import Loading from "../components/ui/Loading";
 import BackButton from "../components/ui/BackButton";
 import { useTranslation } from "react-i18next";
-
+import patientService from "../api/patientService";
 function PatientProfile() {
   const { t } = useTranslation();
-  const { user, updateUser } = useAuth();
+  const { user, updateUser, setUser } = useAuth();
 
   const [isEditing, setIsEditing] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -98,29 +98,40 @@ function PatientProfile() {
 
       // ================= BUILD UPDATE =================
 
-      const updates = {};
+      const userUpdates = {};
 
-      if (formData.name !== originalData.name) updates.name = formData.name;
+      const patientUpdates = {};
 
-      if (formData.email !== originalData.email) updates.email = formData.email;
+      if (formData.name !== originalData.name) userUpdates.name = formData.name;
 
-      if (formData.phone !== originalData.phone) updates.phone = formData.phone;
+      if (formData.email !== originalData.email)
+        userUpdates.email = formData.email;
 
-      if (formData.birthDate !== originalData.birthDate) {
-        updates.birthDate =
-          formData.birthDate === "" ? null : formData.birthDate;
-      }
+      if (formData.phone !== originalData.phone)
+        patientUpdates.phone = formData.phone;
 
-      if (formData.gender !== originalData.gender) {
-        updates.gender = formData.gender === "" ? "none" : formData.gender;
-      }
+      if (formData.birthDate !== originalData.birthDate)
+        patientUpdates.birthDate = formData.birthDate || null;
 
+      if (formData.gender !== originalData.gender)
+        patientUpdates.gender = formData.gender || "none";
       // ================= SAVE =================
 
-      if (Object.keys(updates).length > 0) {
-        await updateUser(updates);
+      if (Object.keys(userUpdates).length) {
+        await updateUser(userUpdates);
       }
 
+      if (Object.keys(patientUpdates).length) {
+        const result = await patientService.updatePatient(
+          user._id,
+          patientUpdates,
+        );
+        console.log(result);
+        setUser({
+          ...user,
+          patientProfile: result.data.patient,
+        });
+      }
       setOriginalData(formData);
 
       setIsEditing(false);

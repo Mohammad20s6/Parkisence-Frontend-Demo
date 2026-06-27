@@ -4,7 +4,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { Line } from "rc-progress";
 import { useTranslation } from "react-i18next";
-
+import testService from "../../../api/testService";
 function HealthSummary() {
   const { t } = useTranslation();
 
@@ -29,50 +29,66 @@ function HealthSummary() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const controller = new AbortController();
-
     async function fetchHealthyStats() {
       try {
         setIsLoading(true);
         setError("");
 
-        const token = localStorage.getItem("token");
+        const statsResponse = await testService.getMyStats();
+        const testsResponse = await testService.getMyTests();
 
-        if (!token) {
-          throw new Error("Unauthorized");
-        }
+        const stats = statsResponse.data;
+        const tests = testsResponse.data.tests;
 
-        const response = await fetch(
-          "http://127.0.0.1:3000/api/tests/my-healthy-stats",
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-            signal: controller.signal,
-          },
+        const voiceTests = tests.filter((test) => test.testType === "voice");
+
+        const drawingTests = tests.filter(
+          (test) => test.testType === "drawing",
         );
 
-        const data = await response.json();
+        const combinedTests = tests.filter(
+          (test) => test.testType === "combined",
+        );
 
-        if (!response.ok) {
-          throw new Error(data.message || "Failed to fetch healthy stats");
-        }
+        const voiceHealthy = voiceTests.filter(
+          (test) => test.result === "Healthy",
+        ).length;
 
-        setStats(data.data);
+        const drawingHealthy = drawingTests.filter(
+          (test) => test.result === "Healthy",
+        ).length;
+
+        const combinedHealthy = combinedTests.filter(
+          (test) => test.result === "Healthy",
+        ).length;
+
+        const averageHealthyTests =
+          stats.totalTests === 0 ? 0 : stats.healthy / stats.totalTests;
+
+        setStats({
+          HealthyPerType: {
+            voice: voiceHealthy,
+            drawing: drawingHealthy,
+            combined: combinedHealthy,
+          },
+
+          totalTestsPerType: {
+            voice: voiceTests.length,
+            drawing: drawingTests.length,
+            combined: combinedTests.length,
+          },
+
+          averageHealthyTests,
+        });
       } catch (err) {
-        if (err.name !== "AbortError") {
-          console.error("Healthy stats error:", err);
-          setError(err.message);
-        }
+        console.error("Healthy stats error:", err);
+        setError(err.message || "Failed to load statistics");
       } finally {
         setIsLoading(false);
       }
     }
 
     fetchHealthyStats();
-
-    return () => controller.abort();
   }, []);
 
   // =========================
