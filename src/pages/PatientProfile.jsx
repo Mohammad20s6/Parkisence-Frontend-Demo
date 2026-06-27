@@ -6,19 +6,9 @@ import Loading from "../components/ui/Loading";
 import BackButton from "../components/ui/BackButton";
 import { useTranslation } from "react-i18next";
 
-const BASE_URL = "http://localhost:3000/";
-
-async function parseJSON(res) {
-  try {
-    return await res.json();
-  } catch {
-    return null;
-  }
-}
-
 function PatientProfile() {
   const { t } = useTranslation();
-  const { user, setUser } = useAuth();
+  const { user, updateUser } = useAuth();
 
   const [isEditing, setIsEditing] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -89,121 +79,56 @@ function PatientProfile() {
       setIsLoading(true);
       setMessage(null);
 
-      const token = localStorage.getItem("token");
+      // ================= VALIDATION =================
 
-      // ===== VALIDATION =====
       if (formData.birthDate) {
         const selectedDate = new Date(formData.birthDate);
-        const today = new Date();
 
-        if (selectedDate > today) {
+        if (selectedDate > new Date()) {
           throw new Error("Birth date cannot be in the future");
         }
       }
 
-      if (formData.phone) {
-        if (formData.phone.length < 8 || formData.phone.length > 15) {
-          throw new Error("Phone number must be between 8 and 15 digits");
-        }
+      if (
+        formData.phone &&
+        (formData.phone.length < 8 || formData.phone.length > 15)
+      ) {
+        throw new Error("Phone number must be between 8 and 15 digits");
       }
 
-      // ===== USER =====
-      const userUpdates = {};
+      // ================= BUILD UPDATE =================
 
-      if (formData.name !== originalData.name) userUpdates.name = formData.name;
+      const updates = {};
 
-      if (formData.email !== originalData.email)
-        userUpdates.email = formData.email;
+      if (formData.name !== originalData.name) updates.name = formData.name;
 
-      if (Object.keys(userUpdates).length > 0) {
-        const userRes = await fetch(`${BASE_URL}api/user/me`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify(userUpdates),
-        });
+      if (formData.email !== originalData.email) updates.email = formData.email;
 
-        const userData = await parseJSON(userRes);
+      if (formData.phone !== originalData.phone) updates.phone = formData.phone;
 
-        if (!userRes.ok) {
-          throw new Error(
-            userData?.message?.includes("E11000")
-              ? "Email already exists"
-              : userData?.message || "Update failed",
-          );
-        }
-      }
-
-      // ===== PATIENT =====
-      const patientUpdates = {};
-
-      if (formData.phone !== originalData.phone)
-        patientUpdates.phone = formData.phone;
-
-      // 🔥 birthDate (مع دعم الحذف)
       if (formData.birthDate !== originalData.birthDate) {
-        patientUpdates.birthDate =
+        updates.birthDate =
           formData.birthDate === "" ? null : formData.birthDate;
       }
 
-      // 🔥 gender FIX النهائي
       if (formData.gender !== originalData.gender) {
-        patientUpdates.gender =
-          formData.gender === "" ? "none" : formData.gender;
+        updates.gender = formData.gender === "" ? "none" : formData.gender;
       }
 
-      let patientData = null;
+      // ================= SAVE =================
 
-      if (Object.keys(patientUpdates).length > 0) {
-        const patientRes = await fetch(`${BASE_URL}api/patient/me`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify(patientUpdates),
-        });
-
-        patientData = await parseJSON(patientRes);
-
-        if (!patientRes.ok) {
-          throw new Error(patientData?.message || "Update failed");
-        }
+      if (Object.keys(updates).length > 0) {
+        await updateUser(updates);
       }
-
-      // ===== UPDATE LOCAL =====
-      const updatedUser = {
-        ...user,
-        name: userUpdates.name || user.name,
-        email: userUpdates.email || user.email,
-        patientProfile: {
-          ...user.patientProfile,
-          phone:
-            "phone" in patientUpdates
-              ? patientUpdates.phone
-              : user.patientProfile?.phone,
-
-          birthDate:
-            "birthDate" in patientUpdates
-              ? patientUpdates.birthDate
-              : user.patientProfile?.birthDate,
-
-          gender:
-            "gender" in patientUpdates
-              ? patientUpdates.gender
-              : user.patientProfile?.gender,
-        },
-      };
-
-      setUser(updatedUser);
 
       setOriginalData(formData);
+
       setIsEditing(false);
+
       setMessage(t("patient.profile.updated"));
     } catch (error) {
       console.error(error);
+
       setMessage(error.message || t("patient.profile.error"));
     } finally {
       setIsLoading(false);

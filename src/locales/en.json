@@ -1,5 +1,7 @@
 {
   "common": {
+    "logoFirstName" : "Parki",
+    "logoSecondName" : "Sense",
     "back": "Back",
     "cancel": "Cancel",
     "submit": "Submit",

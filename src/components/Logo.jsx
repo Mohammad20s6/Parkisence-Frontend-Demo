@@ -1,7 +1,10 @@
 import styles from "./Logo.module.css";
 import { Link as RouterLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Logo() {
+  const { t } = useTranslation();
+
   return (
     <RouterLink
       to="/"
@@ -20,7 +23,10 @@ function Logo() {
           />
         </div>
         <span className={styles.logoText}>
-          Parki<span className={styles.secendColor}>Sense</span>
+          {t("common.logoFirstName")}
+          <span className={styles.secendColor}>
+            {t("common.logoSecondName")}
+          </span>
         </span>
       </div>
     </RouterLink>

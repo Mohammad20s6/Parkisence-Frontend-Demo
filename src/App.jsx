@@ -30,6 +30,10 @@ import AdminFAQ from "./components/dashboard/admin/FAQAdmin.jsx";
 import AdminFeedback from "./components/dashboard/admin/AdminFeedback.jsx";
 import Feedback from "./pages/Feedback.jsx";
 
+import { initializeData } from "./data/initializeData.js";
+
+initializeData();
+
 function App() {
   return (
     <>
