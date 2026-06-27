@@ -422,13 +422,18 @@
   .stats {
     gap: 20px;
   }
+  .hero {
+    padding: 80px 0 50px 0;
+  }
 }
 
 @media (max-width: 480px) {
   .title {
     font-size: 32px;
   }
-
+  .hero {
+    padding: 80px 0 50px 0;
+  }
   .primaryBtn,
   .secondaryBtn {
     max-width: 260px; /* تصغير الزر أكثر ليناسب شاشات مثل Samsung A20 تماماً */
