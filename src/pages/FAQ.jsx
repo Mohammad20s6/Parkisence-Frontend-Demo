@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 import { CircleHelp, ChevronDown, MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-
+import faqService from "../api/faqService";
 function FAQ() {
   const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState(null);
@@ -23,27 +23,11 @@ function FAQ() {
         setIsLoading(true);
         setError("");
 
-        const res = await fetch("http://localhost:3000/api/faqs");
-        const data = await res.json();
+        const response = await faqService.getAll();
 
-        if (!res.ok) {
-          throw new Error(data.message || t("faqPage.failedFetch"));
-        }
-
-        // 🔥 أهم جزء: التعامل مع structure الباك
-        const faqsData =
-          data?.data?.data || // الشكل الحالي
-          data?.data || // fallback
-          data; // fallback نهائي
-
-        console.log("this is faqs : ", faqs);
-        if (!Array.isArray(faqsData)) {
-          throw new Error("Invalid FAQ data format");
-        }
-
-        setFaqs(faqsData);
+        setFaqs(response.data.data);
       } catch (err) {
-        console.error("FAQ fetch error:", err);
+        console.error(err);
         setError(err.message);
       } finally {
         setIsLoading(false);
@@ -51,7 +35,7 @@ function FAQ() {
     }
 
     fetchFaqs();
-  }, [t]);
+  }, []);
 
   const toggleItem = (index) => {
     setOpenIndex(openIndex === index ? null : index);

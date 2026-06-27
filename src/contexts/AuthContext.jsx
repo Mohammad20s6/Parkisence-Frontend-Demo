@@ -62,22 +62,19 @@ function AuthProvider({ children }) {
 
   async function fetchCurrentUser() {
     try {
-      const result = await authService.getCurrentUser();
+      const user = await authService.getCurrentUser();
 
-      const currentUser = result.data.data;
+      if (!user) {
+        dispatch({ type: "stopLoading" });
+        return;
+      }
 
       dispatch({
         type: "setUser",
-        payload: currentUser,
+        payload: user,
       });
-    } catch (err) {
-      console.error("Fetch user error:", err);
-
-      authService.logout();
-
-      dispatch({
-        type: "logout",
-      });
+    } catch {
+      dispatch({ type: "logout" });
     }
   }
 

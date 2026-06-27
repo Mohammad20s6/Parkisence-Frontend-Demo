@@ -4,4 +4,6 @@ export const STORAGE_KEYS = {
   TEST_RESULTS: "parkisence_test_results",
   ADVICE: "parkisence_advice",
   CURRENT_USER: "parkisence_current_user",
+  ARTICLES: "parkisence_articles",
+  FAQS: "parkisence_faqs",
 };

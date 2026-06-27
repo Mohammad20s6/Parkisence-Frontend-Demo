@@ -6,7 +6,7 @@ import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import Loading from "../components/ui/Loading";
 import ErrorAlert from "../components/ui/ErrorAlert";
-
+import articleService from "../api/articleService";
 import { useTranslation } from "react-i18next";
 
 function Articles() {
@@ -19,44 +19,18 @@ function Articles() {
 
   // ✅ ESC close
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") setSelectedArticle(null);
-    };
-
-    if (selectedArticle) {
-      window.addEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "hidden";
-    }
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "auto";
-    };
-  }, [selectedArticle]);
-
-  // ✅ FETCH
-  useEffect(() => {
     async function fetchArticles() {
       try {
         setIsLoading(true);
         setError("");
 
-        const res = await fetch("http://localhost:3000/api/articles");
-        const data = await res.json();
-
-        if (!res.ok) {
-          throw new Error(data.message || t("articlesPage.failedFetch"));
-        }
-
-        const articlesData = data?.data?.data || data?.data || data;
-
-        if (!Array.isArray(articlesData)) {
-          throw new Error("Invalid Articles data format");
-        }
-        console.log("this is art now :", articlesData);
-        setArticles(articlesData);
+        const response = await articleService.getAll();
+        console.log("ARTICLE RESPONSE", response);
+        console.log("ARTICLE DATA", response.data.data);
+        setArticles(response.data.data);
+        console.log("STATE UPDATED");
       } catch (err) {
-        console.error("Articles fetch error:", err);
+        console.error(err);
         setError(err.message);
       } finally {
         setIsLoading(false);
@@ -64,7 +38,7 @@ function Articles() {
     }
 
     fetchArticles();
-  }, [t]);
+  }, []);
 
   // ✅ تقسيم البيانات
   const featured = articles.filter((a) => a.featured);

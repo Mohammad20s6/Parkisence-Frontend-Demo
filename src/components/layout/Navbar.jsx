@@ -27,7 +27,7 @@ function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
   const logoutWrapperRef = useRef(null);
-
+  const mobileLogoutWrapperRef = useRef(null); // السطر الجديد
   const { isAuthenticated, user, logout } = useAuth();
 
   const navigate = useNavigate();
@@ -43,11 +43,14 @@ function Navbar() {
   }, [theme]);
 
   // Close logout popover when clicking outside
+  // Close logout popover when clicking outside
   useEffect(() => {
     function handleClickOutside(e) {
       if (
         logoutWrapperRef.current &&
-        !logoutWrapperRef.current.contains(e.target)
+        !logoutWrapperRef.current.contains(e.target) &&
+        mobileLogoutWrapperRef.current &&
+        !mobileLogoutWrapperRef.current.contains(e.target) // السطر الجديد
       ) {
         setShowLogoutConfirm(false);
       }
@@ -55,7 +58,6 @@ function Navbar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
   function toggleTheme() {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   }
@@ -461,7 +463,10 @@ function Navbar() {
 
           {/* Drawer logout with inline confirmation */}
           {isAuthenticated && (
-            <div className={styles.drawerLogoutWrapper}>
+            <div
+              className={styles.drawerLogoutWrapper}
+              ref={mobileLogoutWrapperRef} // إضافة المرجع هنا
+            >
               {!showLogoutConfirm ? (
                 <button
                   className={styles.drawerLogout}
