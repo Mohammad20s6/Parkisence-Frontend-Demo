@@ -1,0 +1,10 @@
+.color {
+  background-color: var(--bg-card);
+  height: 100vh;
+  padding: 0;
+  color: var(--text-primary);
+}
+.section {
+  padding: 32px 64px;
+  background: var(--bg-primary);
+}

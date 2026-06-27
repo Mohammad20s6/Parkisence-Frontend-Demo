@@ -1,0 +1,556 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Mohammad Abd-alsater",
+      "email": "mohammadalssaj66@gmail.com",
+      "password": "0",
+      "role": "patient",
+      "isActive": true,
+      "createdAt": "2026-01-10T10:00:00Z",
+      "age": "22",
+      "gender": "male",
+      "phone": "0954745523"
+    },
+    {
+      "id": "2",
+      "name": "Admin",
+      "email": "admin@test.com",
+      "password": "0",
+      "role": "admin",
+      "isActive": true,
+      "createdAt": "2026-01-01T09:00:00Z",
+      "age": "",
+      "gender": "",
+      "phone": ""
+    },
+    {
+      "id": "7e2a",
+      "name": "Mohammad.s",
+      "email": "mohamad@gmail.com",
+      "password": "12345678",
+      "role": "patient",
+      "createdAt": "2026-02-08T01:21:40.395Z",
+      "age": "44",
+      "gender": "male",
+      "phone": "093232183"
+    },
+    {
+      "id": "6374",
+      "name": "ahmad.r",
+      "email": "ahmad@gmail.com",
+      "password": "87654321",
+      "role": "patient",
+      "createdAt": "2026-02-08T01:25:17.254Z"
+    },
+    {
+      "id": "2cad",
+      "name": "abdallah hamed",
+      "email": "aa.=@gmail.com",
+      "password": "20042004",
+      "role": "patient",
+      "createdAt": "2026-02-15T20:22:46.753Z"
+    },
+    {
+      "id": "d4cf",
+      "name": "samer",
+      "email": "s@gmail.com",
+      "password": "11111111",
+      "role": "patient",
+      "createdAt": "2026-02-16T23:51:51.203Z"
+    },
+    {
+      "id": "3fed",
+      "name": "ahmad",
+      "email": "ahmad@g.com",
+      "password": "00000000",
+      "role": "patient",
+      "createdAt": "2026-03-01T21:28:26.932Z"
+    },
+    {
+      "id": "b6a6",
+      "name": "abd alrhman abou samra",
+      "email": "abdalrhmanabousamra@gmail.com",
+      "password": "97200400",
+      "role": "patient",
+      "createdAt": "2026-04-02T21:57:20.591Z"
+    },
+    {
+      "id": "7ddb",
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "11111111",
+      "role": "patient",
+      "createdAt": "2026-04-10T21:49:40.622Z"
+    }
+  ],
+  "patients": [
+    {
+      "id": "p1",
+      "userId": "1",
+      "gender": "male",
+      "birthDate": "1960-05-20",
+      "phone": "+963999999999"
+    },
+    {
+      "id": "p2",
+      "userId": "7e2a",
+      "gender": "male",
+      "birthDate": "1970-02-10",
+      "phone": "+963988888888"
+    },
+    {
+      "id": "p3",
+      "userId": "6374",
+      "gender": "male",
+      "birthDate": "1965-09-15",
+      "phone": "+963977777777"
+    }
+  ],
+  "testResults": [
+    {
+      "id": "t1",
+      "patientId": "p1",
+      "type": "voice",
+      "score": 82,
+      "createdAt": "2026-01-20T10:00:00Z"
+    },
+    {
+      "id": "t2",
+      "patientId": "p1",
+      "type": "drawing",
+      "score": 45,
+      "createdAt": "2026-01-22T11:00:00Z"
+    },
+    {
+      "id": "t3",
+      "patientId": "p1",
+      "type": "voice",
+      "score": 70,
+      "createdAt": "2026-01-25T09:00:00Z"
+    },
+    {
+      "id": "t4",
+      "patientId": "p1",
+      "type": "combined",
+      "score": 90,
+      "createdAt": "2026-01-30T09:00:00Z"
+    },
+    {
+      "id": "t5",
+      "patientId": "p2",
+      "type": "voice",
+      "score": 90,
+      "createdAt": "2026-02-10T08:00:00Z"
+    },
+    {
+      "id": "t6",
+      "patientId": "p2",
+      "type": "drawing",
+      "score": 65,
+      "createdAt": "2026-02-12T08:00:00Z"
+    },
+    {
+      "id": "t7",
+      "patientId": "p3",
+      "type": "combined",
+      "score": 55,
+      "createdAt": "2026-02-14T08:00:00Z"
+    },
+    {
+      "id": "fb44",
+      "patientId": 1,
+      "type": "voice",
+      "score": 79,
+      "createdAt": "2026-02-28T23:08:48.721Z"
+    },
+    {
+      "id": "9e51",
+      "patientId": 1,
+      "type": "voice",
+      "score": 83,
+      "createdAt": "2026-02-28T23:09:04.625Z"
+    },
+    {
+      "id": "4e64",
+      "patientId": 1,
+      "type": "voice",
+      "score": 67,
+      "createdAt": "2026-02-28T23:25:11.891Z"
+    },
+    {
+      "id": "3023",
+      "patientId": 1,
+      "type": "voice",
+      "score": 62,
+      "createdAt": "2026-02-28T23:29:59.460Z"
+    },
+    {
+      "id": "109d",
+      "patientId": 1,
+      "type": "voice",
+      "score": 72,
+      "createdAt": "2026-02-28T23:35:47.698Z"
+    },
+    {
+      "id": "8c49",
+      "patientId": 1,
+      "type": "voice",
+      "score": 86,
+      "createdAt": "2026-02-28T23:36:09.164Z"
+    },
+    {
+      "id": "7a97",
+      "patientId": 1,
+      "type": "voice",
+      "score": 64,
+      "createdAt": "2026-03-01T21:29:04.169Z"
+    },
+    {
+      "id": "877d",
+      "patientId": 1,
+      "type": "voice",
+      "score": 58,
+      "createdAt": "2026-03-03T21:00:52.717Z"
+    },
+    {
+      "id": "1b4e",
+      "patientId": 1,
+      "type": "voice",
+      "score": 55,
+      "createdAt": "2026-03-28T13:52:40.444Z"
+    },
+    {
+      "id": "a5c1",
+      "patientId": 1,
+      "type": "voice",
+      "score": 58,
+      "createdAt": "2026-03-29T10:36:54.740Z"
+    },
+    {
+      "id": "93a7",
+      "patientId": 1,
+      "type": "voice",
+      "score": 85,
+      "createdAt": "2026-04-02T22:01:32.557Z"
+    },
+    {
+      "id": "54f9",
+      "patientId": 1,
+      "type": "voice",
+      "score": 55,
+      "createdAt": "2026-04-05T20:59:22.809Z"
+    },
+    {
+      "id": "241f",
+      "patientId": 1,
+      "type": "voice",
+      "score": 58,
+      "createdAt": "2026-04-07T07:40:16.438Z"
+    },
+    {
+      "id": "9f68",
+      "patientId": 1,
+      "type": "voice",
+      "score": 64,
+      "createdAt": "2026-04-07T07:42:06.077Z"
+    },
+    {
+      "id": "1f95",
+      "type": "drawing",
+      "score": 82,
+      "createdAt": "2026-04-12T21:55:03.275Z"
+    },
+    {
+      "id": "57c8",
+      "type": "drawing",
+      "score": 63,
+      "createdAt": "2026-04-12T21:58:19.712Z"
+    },
+    {
+      "id": "05ea",
+      "type": "drawing",
+      "score": 58,
+      "createdAt": "2026-04-12T22:15:07.793Z"
+    },
+    {
+      "id": "4f06",
+      "type": "drawing",
+      "score": 86,
+      "createdAt": "2026-04-12T22:26:14.379Z"
+    },
+    {
+      "id": "bb76",
+      "patientId": 1,
+      "type": "voice",
+      "score": 73,
+      "createdAt": "2026-04-12T22:26:28.615Z"
+    },
+    {
+      "id": "fc79",
+      "type": "drawing",
+      "score": 85,
+      "createdAt": "2026-04-15T10:32:01.052Z"
+    },
+    {
+      "id": "9ff1",
+      "patientId": 1,
+      "type": "voice",
+      "score": 74,
+      "createdAt": "2026-04-15T10:32:18.014Z"
+    },
+    {
+      "id": "9e89",
+      "type": "drawing",
+      "score": 63,
+      "createdAt": "2026-04-15T14:14:44.479Z"
+    },
+    {
+      "id": "fde7",
+      "type": "drawing",
+      "score": 68,
+      "createdAt": "2026-04-15T15:06:57.406Z"
+    },
+    {
+      "id": "e647",
+      "type": "drawing",
+      "score": 61,
+      "createdAt": "2026-04-15T15:41:52.109Z"
+    },
+    {
+      "id": "9685",
+      "score": 75
+    },
+    {
+      "id": "4217",
+      "type": "drawing",
+      "score": 59,
+      "createdAt": "2026-04-15T16:01:49.541Z"
+    },
+    {
+      "id": "c0c4",
+      "type": "drawing",
+      "score": 83,
+      "createdAt": "2026-04-15T16:03:32.455Z"
+    },
+    {
+      "id": "d207",
+      "type": "drawing",
+      "score": 68,
+      "createdAt": "2026-04-15T16:56:47.762Z"
+    },
+    {
+      "id": "2c8c",
+      "type": "drawing",
+      "score": 59,
+      "createdAt": "2026-04-15T17:17:22.845Z"
+    },
+    {
+      "id": "a83a",
+      "type": "drawing",
+      "score": 53,
+      "createdAt": "2026-04-15T23:31:15.979Z"
+    },
+    {
+      "id": "1beb",
+      "patientId": 1,
+      "type": "voice",
+      "score": 71,
+      "createdAt": "2026-04-17T23:06:37.640Z"
+    },
+    {
+      "id": "27ba",
+      "patientId": 1,
+      "type": "voice",
+      "score": 86,
+      "createdAt": "2026-04-19T06:15:42.219Z"
+    },
+    {
+      "id": "23e4",
+      "type": "drawing",
+      "score": 54,
+      "createdAt": "2026-04-22T22:09:31.503Z"
+    },
+    {
+      "id": "d79d",
+      "type": "drawing",
+      "score": 88,
+      "createdAt": "2026-04-27T20:19:23.647Z"
+    },
+    {
+      "id": "8b2e",
+      "patientId": 1,
+      "type": "voice",
+      "score": 56,
+      "createdAt": "2026-05-07T17:10:48.521Z"
+    },
+    {
+      "id": "81fe",
+      "type": "drawing",
+      "score": 57,
+      "createdAt": "2026-05-11T22:39:40.607Z"
+    }
+  ],
+  "patientStats": [
+    {
+      "id": "1",
+      "userId": "1",
+      "totalTests": 4,
+      "averageScore": 64,
+      "lastTestDate": "2026-01-30",
+      "currentStatus": "Moderate"
+    }
+  ],
+  "voiceTests": [
+    {
+      "id": "1",
+      "testResultId": 1,
+      "filePath": "/uploads/voice/test1.wav"
+    }
+  ],
+  "drawingTests": [
+    {
+      "id": "1",
+      "testResultId": 2,
+      "imagePath": "/uploads/drawing/test2.png"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "Understanding Parkinson's Disease",
+      "summary": "Parkinson's disease is a progressive neurological disorder that affects movement and coordination. It occurs due to the gradual loss of dopamine-producing neurons in the brain. Early symptoms may include tremors, stiffness, and slowed movements, which can worsen over time. While there is currently no cure, early detection and proper management can significantly improve quality of life. Treatments often involve medications, lifestyle changes, and sometimes surgical interventions. Understanding the disease is crucial for both patients and caregivers to manage symptoms effectively and maintain independence.",
+      "category": "Education",
+      "readTime": "8 min",
+      "date": "2026-01-10",
+      "source": "Mayo Clinic",
+      "link": "https://www.mayoclinic.org/diseases-conditions/parkinsons-disease",
+      "featured": true
+    },
+    {
+      "id": "2",
+      "title": "Early Warning Signs You Shouldn't Ignore",
+      "summary": "Parkinson's disease often begins with subtle symptoms that are easy to overlook. These may include slight tremors, changes in handwriting, reduced facial expressions, or difficulty with balance. Recognizing these early warning signs is critical for timely diagnosis and treatment. Many patients delay seeking medical advice because symptoms appear minor at first. However, early intervention can slow disease progression and improve daily functioning. Raising awareness about these signs helps individuals take proactive steps toward better neurological health.",
+      "category": "Symptoms",
+      "readTime": "6 min",
+      "date": "2026-01-08",
+      "source": "WHO",
+      "link": "https://www.who.int/news-room/fact-sheets/detail/parkinson-disease",
+      "featured": false
+    },
+    {
+      "id": "3",
+      "title": "Managing Parkinson's in Daily Life",
+      "summary": "Living with Parkinson's disease requires adapting daily routines to manage symptoms effectively. Regular exercise, a balanced diet, and consistent medication schedules play a key role in maintaining stability. Patients often benefit from physical therapy and speech therapy to improve mobility and communication. Emotional support is equally important, as the condition can impact mental health. With the right strategies and support systems, individuals can continue to lead fulfilling lives despite the challenges.",
+      "category": "Lifestyle",
+      "readTime": "7 min",
+      "date": "2026-01-07",
+      "source": "Healthline",
+      "link": "https://www.healthline.com/health/parkinsons",
+      "featured": false
+    },
+    {
+      "id": "4",
+      "title": "Advances in Parkinson's Research",
+      "summary": "Recent advancements in Parkinson's research are offering new hope for patients worldwide. Scientists are exploring innovative treatments, including gene therapy and stem cell approaches, aimed at slowing or even reversing disease progression. Artificial intelligence is also being used to improve early diagnosis through voice and handwriting analysis. These breakthroughs highlight the importance of continued research and investment in neurological sciences. The future holds promising possibilities for more effective and personalized treatments.",
+      "category": "Research",
+      "readTime": "9 min",
+      "date": "2026-01-05",
+      "source": "Nature",
+      "link": "https://www.nature.com",
+      "featured": false
+    }
+  ],
+  "faqs": [
+    {
+      "id": "1",
+      "question": "What is Parkinson's disease?",
+      "answer": "Parkinson’s disease is a progressive neurological disorder that affects movement and coordination."
+    },
+    {
+      "id": "2",
+      "question": "What are the early signs of Parkinson's?",
+      "answer": "Early signs include tremors, slow movement, stiffness, and changes in speech or handwriting."
+    },
+    {
+      "id": "3",
+      "question": "Who is at risk for Parkinson's disease?",
+      "answer": "Risk increases with age, genetics, and environmental factors."
+    },
+    {
+      "id": "4",
+      "question": "How does the voice analysis test work?",
+      "answer": "It analyzes vocal patterns to detect subtle neurological changes."
+    },
+    {
+      "id": "5",
+      "question": "What does the drawing test measure?",
+      "answer": "It evaluates motor control and hand coordination."
+    },
+    {
+      "id": "6",
+      "question": "How accurate are the tests?",
+      "answer": "They provide indicative results based on AI models but are not a medical diagnosis."
+    },
+    {
+      "id": "7",
+      "question": "Is my health data secure?",
+      "answer": "Yes, all data is encrypted and handled securely."
+    },
+    {
+      "id": "8",
+      "question": "Who can see my test results?",
+      "answer": "Only you can access your results unless you choose to share them."
+    },
+    {
+      "id": "0be3",
+      "question": "say my name ?",
+      "answer": "my name is mohammad",
+      "createdAt": "2026-04-07T06:07:08.003Z"
+    }
+  ],
+  "feedbacks": [
+    {
+      "id": "edf1",
+      "name": "Mohammad",
+      "email": "m@test.com",
+      "rating": 3,
+      "message": "noooooooooooo",
+      "createdAt": "2026-04-10"
+    },
+    {
+      "id": "cd40",
+      "name": "ahmad rami",
+      "email": "m@test.com",
+      "rating": 0,
+      "message": "قاس",
+      "createdAt": "2026-04-10"
+    },
+    {
+      "id": "d78a",
+      "name": "sami",
+      "email": "m@test.com",
+      "rating": 5,
+      "message": "no problrms",
+      "createdAt": "2026-04-10"
+    },
+    {
+      "id": "7288",
+      "name": "amjad",
+      "email": "m@test.com",
+      "rating": 3,
+      "message": "thank it is very nice .....",
+      "createdAt": "2026-04-10"
+    },
+    {
+      "id": "5271",
+      "rating": 5,
+      "message": "howww\n"
+    },
+    {
+      "id": "f034",
+      "rating": 4,
+      "message": "shit\n"
+    }
+  ]
+}

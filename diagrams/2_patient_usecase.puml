@@ -1,0 +1,218 @@
+@startuml Patient_UseCase
+title **Parkisense — Patient Use Case Diagram**\nIntelligent Parkinson Detection Platform
+
+' ============================================================
+' Style Configuration
+' ============================================================
+skinparam actorStyle awesome
+skinparam handwritten false
+skinparam shadowing true
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+
+skinparam usecase {
+  BackgroundColor #E3F2FD
+  BorderColor #1565C0
+  FontColor #0D47A1
+  FontSize 11
+  StereotypeFontSize 9
+  BackgroundColor<<auth>> #F3E5F5
+  BorderColor<<auth>> #7B1FA2
+  FontColor<<auth>> #4A148C
+  BackgroundColor<<public>> #E8F5E9
+  BorderColor<<public>> #2E7D32
+  FontColor<<public>> #1B5E20
+  BackgroundColor<<test>> #FFF3E0
+  BorderColor<<test>> #E65100
+  FontColor<<test>> #BF360C
+  BackgroundColor<<history>> #E0F7FA
+  BorderColor<<history>> #00838F
+  FontColor<<history>> #006064
+  BackgroundColor<<profile>> #FFF9C4
+  BorderColor<<profile>> #F9A825
+  FontColor<<profile>> #F57F17
+  BackgroundColor<<feedback>> #FCE4EC
+  BorderColor<<feedback>> #AD1457
+  FontColor<<feedback>> #880E4F
+}
+
+skinparam package {
+  BackgroundColor #FAFAFA
+  BorderColor #90A4AE
+  FontColor #37474F
+  FontSize 13
+  FontStyle bold
+  Style rectangle
+}
+
+skinparam actor {
+  FontSize 14
+  FontStyle bold
+}
+
+skinparam arrow {
+  Color #546E7A
+  FontSize 10
+}
+
+left to right direction
+
+' ============================================================
+' Actor
+' ============================================================
+actor "Auth_Patient" as P #BBDEFB
+
+' ============================================================
+' System Boundary
+' ============================================================
+rectangle "Parkisense — Patient Portal" {
+
+  ' ── Authentication ──
+  package "Authentication" #F3E5F5 {
+    usecase "Logout" as UC_Logout <<auth>>
+  }
+
+  ' ── Public Pages ──
+  package "Public Pages" #E8F5E9 {
+    usecase "View Home Page" as UC_Home <<public>>
+    usecase "Browse Articles" as UC_Articles <<public>>
+    usecase "Preview Article\n(Modal)" as UC_PreviewArticle <<public>>
+    usecase "Read Full Article\n(External Link)" as UC_ReadArticle <<public>>
+    usecase "Browse FAQ" as UC_FAQ <<public>>
+    usecase "Submit Feedback" as UC_Feedback <<public>>
+    usecase "Acces Dashboard" as UC_Dashboard <<public>>
+    usecase "View All Tests" as UC_Tests_2
+    usecase "View Test Details" as UC_Test_2
+    usecase "Download Pdf" as UC_Pdf_2 
+
+
+
+
+
+  }
+
+  
+
+  ' ── AI Prediction Tests ──
+  package "AI Prediction Tests" #FFF3E0 {
+    usecase "Take Voice Test" as UC_Voice <<test>>
+    usecase "Record Audio" as UC_Record <<test>>
+    usecase "Upload Audio File" as UC_UploadAudio <<test>>
+    usecase "Submit Voice for\nAI Analysis" as UC_SubmitVoice <<test>>
+
+    usecase "Take Drawing Test" as UC_Drawing <<test>>
+    usecase "Draw Spiral or Wave" as UC_DrawSpiral <<test>>
+    usecase "Upload Drawing\nImage" as UC_UploadImg <<test>>
+    usecase "Submit Drawing for\nAI Analysis" as UC_SubmitDrawing <<test>>
+
+    usecase "Take Combined Test" as UC_Combined <<test>>
+    
+  }
+
+ 
+
+  ' ── Profile Management ──
+  package "Profile Management" #FFF9C4 {
+    usecase "View Profile" as UC_ViewProfile <<profile>>
+
+    usecase "Edit Name" as UC_EditName <<profile>>
+    usecase "Edit Email" as UC_EditEmail <<profile>>
+    usecase "Edit Phone" as UC_EditPhone <<profile>>
+    usecase "Edit Gender" as UC_EditGender <<profile>>
+    usecase "Edit Birthdate" as UC_EditBirthdate <<profile>>
+  }
+
+  
+}
+
+' ============================================================
+' Patient Associations
+' ============================================================
+P --> UC_Logout
+P --> UC_Home
+P --> UC_Articles
+P --> UC_FAQ
+P --> UC_ViewProfile
+P --> UC_Feedback
+P --> UC_Dashboard
+' ============================================================
+' <<include>> Relationships
+' ============================================================
+
+
+
+' Voice Test includes
+UC_Voice --> UC_SubmitVoice : <<include>>
+UC_SubmitVoice --> UC_Test_2 : <<include>>
+
+' Drawing Test includes
+UC_Drawing --> UC_SubmitDrawing : <<include>>
+UC_SubmitDrawing --> UC_Test_2 : <<include>>
+
+
+' Combined Test includes
+UC_Combined --> UC_SubmitVoice : <<include>>
+UC_Combined --> UC_SubmitDrawing : <<include>>
+
+' ============================================================
+' <<extend>> Relationships
+' ============================================================
+
+' Articles extends
+UC_PreviewArticle ..> UC_Articles : <<extend>>
+UC_ReadArticle ..> UC_PreviewArticle : <<extend>>
+
+' Dashboard extend
+UC_Tests_2 ..> UC_Dashboard :<<extend>>
+UC_Test_2 ..> UC_Dashboard :<<extend>>
+UC_Pdf_2 ..> UC_Test_2 :<<extend>>
+UC_Voice ..> UC_Dashboard :<<extend>>
+UC_Drawing ..> UC_Dashboard :<<extend>>
+UC_Combined ..> UC_Dashboard :<<extend>>
+
+
+
+' FAQ extends
+
+' Voice Test extends
+UC_Record ..> UC_Voice : <<extend>>
+UC_UploadAudio ..> UC_Voice : <<extend>>
+UC_UploadAudio ..> UC_SubmitVoice : <<extend>>
+UC_Record ..> UC_SubmitVoice : <<extend>>
+
+
+' Drawing Test extends
+UC_DrawSpiral ..> UC_Drawing : <<extend>>
+UC_UploadImg ..> UC_Drawing : <<extend>>
+UC_UploadImg ..> UC_SubmitDrawing :<<extend>>
+UC_DrawSpiral ..> UC_SubmitDrawing :<<extend>>
+
+
+' History extends
+UC_PDF ..> UC_Details : <<extend>>
+
+' Profile extends
+UC_EditName ..> UC_ViewProfile : <<extend>>
+UC_EditEmail ..> UC_ViewProfile : <<extend>>
+UC_EditPhone ..> UC_ViewProfile : <<extend>>
+UC_EditGender ..> UC_ViewProfile : <<extend>>
+UC_EditBirthdate ..> UC_ViewProfile : <<extend>>
+
+' ============================================================
+' Legend
+' ============================================================
+legend bottom right
+  |= Color |= Package |
+  |<#F3E5F5> | Authentication |
+  |<#E8F5E9> | Public Pages |
+  |<#E3F2FD> | Patient Dashboard |
+  |<#FFF3E0> | AI Prediction Tests |
+  |<#E0F7FA> | Test History |
+  |<#FFF9C4> | Profile Management |
+  
+  --
+  **··>** <<include>> = Mandatory sub-flow
+  **··>** <<extend>> = Optional sub-flow
+endlegend
+
+@enduml

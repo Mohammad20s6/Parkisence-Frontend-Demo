@@ -1,0 +1,206 @@
+.footer {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-top: 1px solid var(--text-secondary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 80px 32px;
+}
+
+/* ===== Grid ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 64px;
+}
+
+/* ===== Brand ===== */
+.brand {
+  max-width: 300px;
+}
+
+/* .logoIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #042f2e;
+} */
+
+/* .logoText {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.logoText span {
+  color: var(--accent);
+}
+
+.brandDesc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+} */
+
+/* ===== Column ===== */
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+  text-align: start;
+  margin-top: 0;
+}
+
+/* ===== List ===== */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list li {
+  display: flex;
+}
+
+.list a {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-decoration: none;
+
+  position: relative;
+  padding-inline-start: 14px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* decorative dot (بديل النقطة الكلاسيكية) */
+.list a::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateY(-50%) scale(0.6);
+  opacity: 0.5;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.list a:hover {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+:global([dir="rtl"]) .list a:hover {
+  transform: translateX(-4px);
+}
+
+.list a:hover::before {
+  transform: translateY(-50%) scale(1);
+  opacity: 1;
+}
+
+/* ===== Contact ===== */
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contactList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: start;
+  margin-inline-start: -30px;
+}
+
+/* ===== Bottom ===== */
+.bottom {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.bottom p {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.made {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.made svg {
+  color: var(--primary);
+}
+
+.legal {
+  display: flex;
+  gap: 24px;
+}
+
+.legal a {
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.legal a:hover {
+  color: var(--accent);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+
+  .container {
+    padding: 64px 48px 32px;
+  }
+}
+
+@media (max-width: 440px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .legal {
+    justify-content: center;
+  }
+}

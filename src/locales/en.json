@@ -1,0 +1,565 @@
+{
+  "common": {
+    "back": "Back",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "reset": "Reset",
+    "delete": "Delete",
+    "save": "save",
+    "editProfile": "Edit Profile",
+    "or": "OR",
+    "loading": "Loading...",
+    "saving": "Saving...",
+    "adding": "Adding...",
+    "deleting": "Deleting...",
+    "signingIn": "Signing in...",
+    "creatingAccount": "Creating account...",
+    "sending": "Sending...",
+    "recording": "Recording...",
+    "cancelUpper": "CANCEL",
+    "view": "View",
+    "viewAll": "View all",
+    "refreshPage": "Refresh Page",
+    "featured": "Featured",
+    "readFullArticle": "Read Full Article",
+    "readMore": "Read more",
+    "male": "Male",
+    "female": "Female",
+    "selectGender": "Select gender",
+    "emailCannotChange": "Email cannot be changed",
+    "bullet": "•",
+    "testsWord": "tests",
+    "testWord": "Test",
+    "riskWord": "risk"
+  },
+  "navbar": {
+    "home": "Home",
+    "features": "Features",
+    "how": "How",
+    "articles": "Articles",
+    "faq": "FAQ",
+    "feedback": "Feedback",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "toggleTheme": "Toggle theme",
+    "toggleMenu": "Toggle menu",
+    "toggleLanguage": "Toggle language",
+    "logoutConfirm": "Are you sure you want to logout?",
+    "logoutYes": "Logout",
+    "logoutNo": "Cancel"
+  },
+  "adminNav": {
+    "dashboard": "Dashboard",
+    "patients": "Patients",
+    "results": "Results",
+    "articles": "Articles",
+    "faq": "FAQ",
+    "feedback": "Feedback",
+    "logout": "Logout",
+    "toggleTheme": "Toggle theme",
+    "toggleLanguage": "Toggle language",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "brandDesc": "AI-powered platform for early detection and continuous monitoring of Parkinson's disease through voice and motor analysis.",
+    "quickLinks": "Quick Links",
+    "ourTests": "Our Tests",
+    "voiceTest": "Voice Test",
+    "drawingTest": "Drawing Test",
+    "combinedAnalysis": "Combined Analaysis",
+    "contact": "Contact",
+    "damascus": "Damascus, Syria",
+    "email": "support@parkisense.com",
+    "phone": "+963 930 850 447",
+    "copyright": "© 2026 ParkiSense. All rights reserved.",
+    "madeWith": "Made with",
+    "forBetterHealth": "for better health",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "hero": {
+    "badge": "AI-Powered Medical Technology",
+    "titleLead": "Early Detection of",
+    "titleHighlight": "Parkinson's Disease",
+    "description": "Advanced AI-powered analysis combining voice patterns and motor control tests for accurate early detection and monitoring.",
+    "startAssessment": "Start Assessment",
+    "learnMore": "Learn More",
+    "accuracyRate": "Accuracy Rate",
+    "testsAnalyzed": "Tests Analyzed",
+    "available": "Available",
+    "voiceAnalysis": "Voice Analysis",
+    "drawingAnalysis": "Drawing Analysis",
+    "accuracyVoice": "87% Accuracy",
+    "accuracyDrawing": "88% Accuracy"
+  },
+  "features": {
+    "title": "Comprehensive Analysis",
+    "subtitle": "Our platform combines multiple diagnostic approaches for accurate results",
+    "voiceTitle": "Voice Analysis",
+    "voiceDesc": "Advanced AI analyzes subtle voice patterns and tremors that may indicate early Parkinson's symptoms.",
+    "drawingTitle": "Drawing Test",
+    "drawingDesc": "Interactive motor control assessment through precise hand-drawing exercises.",
+    "combinedTitle": "Combined Analysis",
+    "combinedDesc": "Enhanced accuracy by combining voice and motor assessments for comprehensive results."
+  },
+  "how": {
+    "title": "How It Works",
+    "subtitle": "Simple, secure, and scientifically validated process",
+    "step1Title": "Create Account",
+    "step1Desc": "Register as a patient with secure authentication.",
+    "step2Title": "Complete Tests",
+    "step2Desc": "Perform voice and drawing tests from the comfort of your home.",
+    "step3Title": "AI Analysis",
+    "step3Desc": "Advanced algorithms analyze your results for early signs.",
+    "step4Title": "Get Results",
+    "step4Desc": "Receive detailed reports and recommendations from experts."
+  },
+  "security": {
+    "badge": "Security First",
+    "title": "Your Health Data is Safe",
+    "subtitle": "We prioritize your privacy and data security",
+    "encryptionTitle": "End-to-End Encryption",
+    "encryptionDesc": "Your data is protected with military-grade 256-bit encryption at rest and in transit.",
+    "hipaaTitle": "HIPAA Compliant",
+    "hipaaDesc": "We follow strict healthcare data protection standards to ensure your privacy.",
+    "privacyTitle": "Privacy First",
+    "privacyDesc": "Your medical data is never shared or sold. You have full control over your information.",
+    "certHipaa": "HIPAA Certified",
+    "certSoc": "SOC 2 Type II",
+    "certIso": "ISO 27001",
+    "certGdpr": "GDPR Compliant"
+  },
+  "cta": {
+    "badge": "Trusted by 10,000+ Healthcare Professionals",
+    "titleLead": "Take the First Step Towards",
+    "titleHighlight": "Early Detection",
+    "description": "Join thousands of patients using ParkiSense for reliable, AI-powered Parkinson's screening with clinical-grade accuracy.",
+    "startAssessment": "Start Assessment",
+    "login": "Login",
+    "hipaaTitle": "HIPAA Compliant",
+    "securePrivate": "Secure & Private",
+    "resultsMinutes": "Results in Minutes",
+    "fastAnalysis": "Fast Analysis",
+    "clinicalTitle": "Clinically Validated",
+    "researchBacked": "Research-Backed"
+  },
+  "auth": {
+    "login": {
+      "welcomeBack": "Welcome Back",
+      "subtitle": "Sign in to continue your health journey",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "signIn": "Sign In",
+      "noAccount": "Don't have an account?",
+      "sideTitle": "AI-Powered Medical Technology",
+      "sideText": "Advanced analysis of voice and motor patterns for early detection of Parkinson's disease symptoms."
+    },
+    "register": {
+      "sideTitle": "Start Your Health Journey",
+      "sideText": "Join thousands of patients who trust ParkiSense for early detection of Parkinson's disease.",
+      "title": "Create Account",
+      "subtitle": "Create an account to get started",
+      "fullName": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "hasAccount": "Already have an account?"
+    },
+    "placeholders": {
+      "email": "you@example.com",
+      "password": "••••••••",
+      "fullName": "John Doe"
+    },
+    "errors": {
+      "noAccount": "No account found with this email",
+      "wrongPassword": "Wrong password",
+      "fullNameRequired": "Full name is required",
+      "passwordLength": "Password must be at least 8 characters",
+      "emailRegistered": "Email is already registered",
+      "failedCreate": "Failed to create account",
+      "noUser": "No authenticated user",
+      "failedUpdate": "Failed to update profile"
+    }
+  },
+  "articlesPage": {
+    "badge": "Educational Resources",
+    "title": "Articles & Insights",
+    "description": "Explore trusted medical and research-based articles about Parkinson’s disease, early detection methods, and maintaining brain health.",
+    "emptyTitle": "Sorry, No Articles Yet",
+    "emptyText": "It looks like there are no articles available at the moment. Please check back later for new educational content and updates.",
+    "noMoreTitle": "Sorry, No More Articles",
+    "noMoreText": "We currently don't have additional articles. Please check back later for more updates.",
+    "failedFetch": "Failed to fetch articles"
+  },
+  "faqPage": {
+    "badge": "Help Center",
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to common questions about Parkinson's disease and our platform.",
+    "emptyTitle": "Sorry, No Questions Available",
+    "emptyText": "We couldn’t find any FAQs at the moment. Please check back later or contact support for help.",
+    "stillQuestions": "Still have questions?",
+    "stillQuestionsText": "Can't find the answer you're looking for? We're here to help.",
+    "contactSupport": "Contact Support",
+    "failedFetch": "Failed to fetch FAQs"
+  },
+  "feedbackPage": {
+    "badge": "Your Voice Matters",
+    "title": "Share Your Feedback",
+    "description": "Help us improve ParkiSense by sharing your experience and suggestions",
+    "rateQuestion": "How would you rate your experience?",
+    "yourFeedback": "Your Feedback",
+    "placeholder": "Share your thoughts...",
+    "submit": "Submit Feedback",
+    "success": "✅ Your feedback has been sent successfully!",
+    "error": "❌ Failed to send feedback. Please try again.",
+    "note": "Your feedback helps us improve ParkiSense. Submissions are reviewed by our administration team.",
+    "failedSend": "Failed to send",
+    "requestCancelled": "Request cancelled",
+    "subject": "Subject",
+    "categoryOptional": "Category (optional)",
+    "subjectPlaceholder": "What is your feedback about?"
+  },
+  "voiceTest": {
+    "title": "Voice Analysis Test :",
+    "description": "Please pronounce the following sound clearly for 3 seconds.",
+    "instructionsTitle": "Instractions :",
+    "instruction1": "Find a quiet environment with minimal background noise.",
+    "instruction2": "Speak clearly and at your normal pace.",
+    "instruction3": "Take a deep breath.",
+    "instruction4": "Read the provided word for 3-5 seconds.",
+    "instruction5": "Hold your device 6-12 cm from your mouth.",
+    "recordHint": "Record your voice like this example or Upload one :",
+    "testWord": "Aaaaaaa",
+    "durationHint": "Duration: 3-5 seconds",
+    "exampleRecord": "Example Record :",
+    "recordingComplete": "Recording Complete.",
+    "yourRecording": "Your Recording or Uploaded audio file :",
+    "uploadAudio": "Upload Audio File (Wav Format)",
+    "invalidAudio": "Please upload a valid audio file.",
+    "failedSave": "Failed to save result",
+    "failedAnalyze": "Failed to analyze audio."
+  },
+  "drawingTest": {
+    "title": "Drawing Analysis Test :",
+
+    "spiral": "Spiral",
+    "wave": "Wave",
+
+    "spiralDescription": "Draw a continuous spiral naturally inside the drawing area while keeping your hand movement smooth and stable.",
+    "waveDescription": "Draw a smooth wave pattern inside the drawing area using a continuous and controlled hand movement.",
+
+    "instructionsTitle": "Instructions :",
+
+    "spiralInstruction1": "Draw the spiral freely inside the drawing area using one continuous movement.",
+    "spiralInstruction2": "Try to keep the spacing between the spiral turns as consistent as possible.",
+    "spiralInstruction3": "Avoid sudden stops or sharp hand movements while drawing.",
+
+    "waveInstruction1": "Draw a continuous wave pattern from one side of the area to the other.",
+    "waveInstruction2": "Maintain smooth and balanced up-and-down movements while drawing.",
+    "waveInstruction3": "Try to keep the wave shape stable without abrupt direction changes.",
+
+    "howToDraw": "Reference Shape :",
+
+    "spiralDrawHeaderTitle": "Spiral Drawing Area",
+    "waveDrawHeaderTitle": "Wave Drawing Area",
+
+    "spiralDrawHeaderSubtitle": "Draw the spiral naturally inside the canvas area.",
+    "waveDrawHeaderSubtitle": "Draw the wave pattern smoothly inside the canvas area.",
+
+    "reset": "Reset",
+    "uploadImage": "Upload Image",
+
+    "failedSave": "Failed to save result",
+    "failedAnalyze": "Failed to analyze drawing",
+    "spiralPattern": "Spiral",
+    "wavePattern": "Wave"
+  },
+  "testDetails": {
+    "healthy": "Healthy",
+    "parkinson": "Parkinson's Detected",
+    "goodNews": "Good News!",
+    "medicalAdvice": "Medical Advice",
+    "defaultHealthyAdvice": "All clear. No signs of Parkinson detected. Continue maintaining a healthy lifestyle.",
+    "defaultParkinsonAdvice": "Parkinson's disease detected. Please consult a neurologist for further evaluation and treatment.",
+    "pdfResult": "Result",
+    "pdfAdvice": "Advice",
+    "failed": "Analysis Failed",
+    "analysisFailed": "Test Analysis Failed",
+    "analysisResults": "Analysis Results",
+    "downloadPdf": "Download PDF",
+    "failedAdvice": "The uploaded file could not be analyzed. Please upload a valid and clear file and try again.",
+    "duplicateTitle": "Previously Analyzed File",
+    "duplicateMsg": "You have uploaded this file before. the saved test result is displayed."
+  },
+  "patient": {
+    "dashboard": {
+      "welcome": "Welcome, {{name}}! 👋",
+      "subtitle": "Track your health progress and take new assessments."
+    },
+    "quickActions": {
+      "heading": "Quick Actions",
+      "voiceTitle": "Voice Test",
+      "voiceDesc": "Analyze speech patterns",
+      "drawingTitle": "Drawing Test",
+      "drawingDesc": "Evaluate hand control",
+      "combinedTitle": "Combined Test",
+      "combinedDesc": "Comprehensive evaluation"
+    },
+    "healthSummary": {
+      "heading": "Health Summary",
+      "healthScore": "Health Score",
+      "voiceTest": "Voice Test",
+      "drawingTest": "Drawing Test",
+      "combinedTest": "Combined Test"
+    },
+    "recentTests": {
+      "title": "Recent Tests",
+      "viewAll": "View All",
+      "empty": "no tests done yet..."
+    },
+    "testsHistory": {
+      "title": "Test History",
+      "subtitle": "View and track your assessment history",
+      "filterAllTests": "All Tests",
+      "filterVoice": "Voice",
+      "filterDrawing": "Drawing",
+      "filterCombined": "Combined",
+      "failed": "Failed",
+      "healthy": "Healthy",
+      "parkinson": "Parkinson's"
+    },
+    "profile": {
+      "title": "Profile Settings",
+      "subtitle": "Manage your personal information",
+      "fullName": "Full Name",
+      "emailAddress": "Email Address",
+      "birthDate": "birthDate",
+      "gender": "Gender",
+      "phone": "Phone Number",
+      "cancel": "Cancel",
+      "editProfile": "Edit Profile",
+      "save": "save",
+      "updated": "Profile updated successfully ✅",
+      "error": "Something went wrong ❌"
+    },
+    "statsCards": {
+      "totalTests": "Total Tests",
+      "averageAcore": "Average Acore",
+      "normalTests": "Healthy tests",
+      "abnormalTests": "Parkinson’s tests",
+      "healthStatues": "Health Statues",
+      "lastTest": "Last Test"
+    },
+    "errors": {
+      "failedPatient": "Failed to fetch patient",
+      "failedTests": "Failed to fetch tests",
+      "generic": "Something went wrong",
+      "noData": "no data"
+    },
+    "status": {
+      "Moderate": "Moderate",
+      "Unknown": "Unknown"
+    }
+  },
+  "filters": {
+    "allLevels": "All Levels",
+    "allRisks": "All Risks",
+    "allRatings": "All Ratings",
+    "lowRisk": "Low Risk",
+    "moderate": "Moderate",
+    "moderateRisk": "Moderate Risk",
+    "highRisk": "High Risk",
+    "searchNameEmail": "Search by name or email...",
+    "star5": "⭐ 5 Stars",
+    "star4": "⭐ 4 Stars",
+    "star3": "⭐ 3 Stars",
+    "star2": "⭐ 2 Stars",
+    "star1": "⭐ 1 Star"
+  },
+  "admin": {
+    "panelBadge": "Admin Panel",
+    "feedback": {
+      "searchPlaceholder": "Search feedback...",
+      "feedbacks": "Feedbacks",
+      "avgRating": "Avg Rating",
+      "failedFetch": "Failed to fetch feedbacks",
+      "tableUser": "User",
+      "tableMessage": "Message",
+      "tableRating": "Rating",
+      "tableDate": "Date",
+      "tableActions": "Actions",
+      "modalTitle": "Feedback Details",
+      "noResults": "No feedback found"
+    },
+    "articles": {
+      "title": "Manage Articles",
+      "description": "Add, edit or delete articles for users.",
+      "searchPlaceholder": "Search articles...",
+      "articlesCount": "Articles",
+      "addArticle": "Add Article",
+      "emptyTitle": "No Articles Found",
+      "emptyText": "Try searching or add a new article.",
+      "deleteTitle": "Delete Article",
+      "deleteConfirm": "Are you sure you want to delete this article?",
+      "failedFetch": "Failed to fetch articles",
+      "failedDelete": "Failed to delete articles",
+      "toastDeleted": "articles deleted successfully ✅",
+      "toastAdded": "Article Added successfully ✅",
+      "toastUpdated": "Article updated successfully ✏️",
+      "addModalTitle": "Add New Article",
+      "editModalTitle": "Edit Article",
+      "labelTitle": "Title *",
+      "labelSummary": "Summary *",
+      "labelCategory": "Category *",
+      "labelReadTime": "Read Time *",
+      "labelLink": "Article Link *",
+      "placeholderTitle": "Enter article title",
+      "placeholderSummary": "Short description",
+      "placeholderReadTime": "e.g. 5 min",
+      "placeholderLink": "https://example.com",
+      "selectCategory": "Select category",
+      "addArticleBtn": "Add Article",
+      "saveChanges": "Save Changes",
+      "allFieldsRequired": "All fields are required",
+      "failedAdd": "Failed to add article",
+      "failedUpdate": "Failed to update article"
+    },
+    "faq": {
+      "title": "Manage FAQs",
+      "description": "Edit, delete or manage frequently asked questions.",
+      "searchPlaceholder": "Search by question...",
+      "faqsCount": "FAQs",
+      "addFaq": "Add FAQ",
+      "emptyTitle": "No FAQs Found",
+      "emptyText": "Try changing your search or add a new FAQ.",
+      "deleteTitle": "Delete FAQ",
+      "deleteConfirm": "Are you sure you want to delete this FAQ? This action cannot be undone.",
+      "failedFetch": "Failed to fetch FAQs",
+      "failedDelete": "Failed to delete FAQ",
+      "toastDeleted": "FAQ deleted successfully ✅",
+      "toastAdded": "FAQ Added successfully ✅",
+      "toastUpdated": "FAQ updated successfully ✏️",
+      "addModalTitle": "Add New FAQ",
+      "editModalTitle": "Edit FAQ",
+      "labelQuestion": "Question *",
+      "labelAnswer": "Answer *",
+      "placeholderQuestion": "Enter question",
+      "placeholderAnswer": "Enter answer",
+      "addFaqBtn": "Add FAQ",
+      "failedAdd": "Failed to add FAQ",
+      "failedUpdate": "Failed to update FAQ",
+      "allFieldsRequired": "All fields are required"
+    },
+    "category": {
+      "general": "General",
+      "medical": "Medical",
+      "technical": "Technical"
+    },
+    "tables": {
+      "patient": "Patient",
+      "age": "Age",
+      "gender": "Gender",
+      "phone": "Phone",
+      "accountCreated": "Account Created",
+      "tests": "Tests",
+      "riskLevel": "Risk Level",
+      "testType": "Test Type",
+      "date": "Date",
+      "score": "Score",
+      "confidence": "Confidence",
+      "result": "Result",
+      "noPatients": "No patients found",
+      "noTests": "No tests found",
+      "totalPatients": "Total Patients"
+    },
+    "stats": {
+      "totalPatients": "Total Patients",
+
+      "lowRisk": "Low Risk",
+      "moderateRisk": "Moderate Risk",
+      "highRisk": "High Risk",
+
+      "voiceResult": "Voice Cases",
+      "drawingResult": "Drawing Cases",
+      "combinedResult": "Combined Cases",
+
+      "totalTests": "Total Tests",
+      "totalTestsDashboard": "Total Tests",
+
+      "voiceTests": "Voice Tests",
+      "drawingTests": "Drawing Tests",
+      "combinedTests": "Combined Tests",
+
+      "avgScore": "Average Score",
+
+      "normalTests": "Healthy Cases",
+      "abnormalTests": "Parkinson Cases",
+
+      "lastTest": "Last Test",
+
+      "newPatients": "New Patients",
+      "testsConducted": "Tests Conducted"
+    },
+    "analytics": {
+      "testDistribution": "Test Distribution",
+
+      "riskDistribution": "Risk Distribution",
+
+      "resultDistribution": "Parkinson Distribution",
+
+      "thisMonth": "This Month"
+    },
+    "recentActivity": {
+      "recentTests": "Recent Tests",
+      "recentPatients": "Recent Patients"
+    },
+    "activity": {
+      "testMeta": "{{typeLabel}} • {{date}}",
+
+      "patientTestsLine": "{{count}} tests",
+
+      "patientRiskBadge": "{{level}} risk"
+    },
+    "filters": {
+      "allTests": "All Tests",
+      "voiceTest": "Voice Test",
+      "drawingTest": "Drawing Test",
+      "combinedTest": "Combined Test"
+    },
+
+    "riskBadge": {
+      "low": "low",
+      "moderate": "moderate",
+      "high": "high"
+    },
+
+    "results": {
+      "allResults": "All Results",
+      "healthy": "Healthy",
+      "parkinson": "Parkinson's"
+    },
+
+    "stub": {
+      "combinedTest": "This area is reserved for the combined test module...",
+      "adminFaq": "This area is reserved for admin FAQ management..."
+    }
+  },
+  "tests": {
+    "typeLabel": "{{type}} test",
+    "voice": "voice",
+    "drawing": "drawing",
+    "combined": "combined"
+  },
+  "errors": {
+    "generic": "Something went wrong"
+  },
+  "combinedTestPage": {
+    "placeholder": "this place for combine test...."
+  },
+  "adminFaqPage": {
+    "placeholder": "this place for admin FAQ..."
+  }
+}

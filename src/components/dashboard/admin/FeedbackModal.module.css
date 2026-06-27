@@ -1,0 +1,145 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+}
+
+.modal {
+  width: 100%;
+  max-width: 480px;
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 20px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h3 {
+  color: var(--text-primary);
+  margin-bottom: 0px;
+}
+.closeBtn {
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  padding: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.closeBtn:hover {
+  color: var(--high);
+}
+/* USER */
+.user {
+  margin-top: 12px;
+}
+
+.name {
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+.email {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-top: 0px;
+}
+
+/* RATING */
+.rating {
+  display: flex;
+  gap: 4px;
+  margin: 12px 0;
+}
+
+.starFilled {
+  color: #facc15;
+  stroke: #facc15;
+}
+
+.starEmpty {
+  color: #e5e7eb;
+}
+.message {
+  word-break: break-word;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.messageBox {
+  max-height: 300px;
+  overflow-y: auto;
+}
+/* MESSAGE */
+.messageBox {
+  background: var(--bg-secondary);
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  word-break: break-word;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.messageBox p {
+  color: var(--text-primary);
+}
+/* DATE */
+.date {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* FOOTER */
+.closeAction {
+  margin-top: 16px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+
+  background: var(--primary);
+  color: white;
+
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .modal {
+    margin: 0 10px;
+    padding: 16px;
+  }
+}

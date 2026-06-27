@@ -1,0 +1,48 @@
+.heading {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.section {
+  margin-top: 12px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.viewAll {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.viewAll:hover {
+  background-color: var(--bg-primary);
+}
+.arrow {
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.viewAll:hover .arrow {
+  transform: translateX(4px);
+}

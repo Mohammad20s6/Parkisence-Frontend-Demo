@@ -1,0 +1,60 @@
+/* error  */
+.error {
+  margin-bottom: 15px;
+  width: fit-content;
+  margin: 12px auto;
+}
+/* =================================== */
+/*          welcome sectoin            */
+/* =================================== */
+
+.wrapper {
+  margin-bottom: 24px;
+  animation: fadeIn 0.4s ease;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* =================================== */
+/*   tests & recent and suary Grid     */
+/* =================================== */
+.sectionsGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+  color: var(--text-primary);
+  padding: 24px;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+/* responsive */
+@media (max-width: 768px) {
+  .sectionsGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,282 @@
+/* ===== Header ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  width: 100%;
+  background: var(--bg-primary);
+  border-bottom: 2px solid var(--border);
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4px 24px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===== Desktop Nav ===== */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: var(--text-secondary);
+  text-decoration: none;
+
+  padding: 8px 14px;
+  border-radius: 10px;
+
+  transition: all 0.2s ease;
+}
+
+.navItem:hover {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.navItem svg {
+  transition: transform 0.2s ease;
+}
+
+.navItem:hover svg {
+  transform: translateY(-2px);
+}
+
+/* Active Desktop */
+.active {
+  background: var(--primary);
+  color: var(--text-primary);
+}
+
+/* ===== Actions ===== */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconBtn {
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-primary);
+  transition: background 0.2s ease;
+}
+
+.iconBtn:hover {
+  background: var(--bg-card);
+}
+
+.logoutBtn {
+  height: 38px;
+  padding: 0 16px;
+
+  border-radius: 8px;
+  border: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  background: var(--primary);
+  color: var(--text-primary);
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background: var(--primary-hover);
+}
+
+/* ===== Mobile Menu Button ===== */
+.mobileMenuBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+/* ===== Overlay ===== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 90;
+}
+
+/* ===== Drawer ===== */
+.drawer {
+  position: fixed;
+  top: 0;
+  inset-inline-end: 0;
+  height: 100%;
+  width: 280px;
+
+  background: var(--bg-secondary);
+  border-inline-start: 1px solid var(--border);
+
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+:global([dir="rtl"]) .drawer:not(.drawerOpen) {
+  transform: translateX(-100%);
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+/* Drawer Header */
+.drawerHeader {
+  height: 64px;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  border-bottom: 1px solid var(--border);
+
+  background: var(--bg-primary);
+}
+
+.closeBtn {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  border: none;
+
+  background: var(--bg-card);
+  color: var(--text-secondary);
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.closeBtn:hover {
+  background: var(--border);
+  color: var(--text-primary);
+  transform: rotate(90deg);
+}
+
+/* Active */
+.closeBtn:active {
+  transform: scale(0.92) rotate(90deg);
+}
+
+/* Drawer Nav */
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 18px;
+  gap: 16px;
+}
+
+/* Drawer Items */
+.drawerItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  padding: 14px 0;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  text-decoration: none;
+  color: var(--text-secondary);
+
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+
+.drawerItem:hover {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.drawerActive {
+  background: var(--primary);
+  color: var(--text-primary);
+}
+
+/* Drawer Logout */
+.drawerLogout {
+  margin-top: 20px;
+  height: 42px;
+
+  border-radius: 10px;
+  border: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  background: var(--primary);
+  color: var(--text-primary);
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.drawerLogout:hover {
+  background: var(--primary-hover);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .nav {
+    display: none;
+  }
+
+  .logoutBtn {
+    display: none;
+  }
+
+  .mobileMenuBtn {
+    display: inline-flex;
+  }
+  .container {
+    padding: 0px 24px;
+  }
+}

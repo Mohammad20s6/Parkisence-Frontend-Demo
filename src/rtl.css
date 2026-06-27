@@ -1,0 +1,18 @@
+/* RTL layout fixes — minimal overrides; LTR unchanged */
+
+[dir="rtl"] body {
+  text-align: start;
+}
+
+[dir="rtl"] input:not([type="checkbox"]):not([type="radio"]),
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  text-align: right;
+}
+
+[dir="rtl"] input::placeholder,
+[dir="rtl"] textarea::placeholder {
+  text-align: right;
+}
+
+/* Progress / circular text stays centered via component styles */

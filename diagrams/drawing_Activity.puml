@@ -1,0 +1,139 @@
+@startuml Drawing_Test_Styled
+
+title Parkisense — Drawing Test Workflow
+caption AI-Based Motor Drawing Analysis
+
+' =========================
+' Global Style
+' =========================
+skinparam shadowing true
+skinparam roundcorner 18
+skinparam backgroundColor #FAFAFA
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+
+skinparam title {
+  FontSize 18
+  FontStyle bold
+  FontColor #1565C0
+}
+
+skinparam activity {
+  BackgroundColor #E3F2FD
+  BorderColor #1565C0
+  FontColor #0D47A1
+  ArrowColor #455A64
+  BarColor #455A64
+  StartColor #2E7D32
+  EndColor #C62828
+  DiamondBackgroundColor #FFF8E1
+  DiamondBorderColor #D4A017
+}
+
+skinparam partition {
+  BorderColor #1976D2
+  BackgroundColor #F5F9FF
+  FontColor #1565C0
+  FontStyle bold
+  RoundCorner 20
+  BorderThickness 2
+}
+
+|User|
+
+start
+
+:Access Dashboard;
+:Select Drawing Test;
+
+repeat
+
+if (Choose Input Method?) then (Draw on Canvas)
+
+  if (Drawing Type?) then (Spiral)
+
+    :Draw Spiral Pattern;
+
+  else (Wave)
+
+    :Draw Wave Pattern;
+
+  endif
+
+else (Upload Image)
+
+  :Select & Upload Drawing Image;
+
+endif
+
+:Preview Drawing/Image;
+
+if (Reset Drawing Test?) then (Yes)
+
+else (No)
+
+  break
+
+endif
+
+repeat while ( )
+
+:Submit Drawing Sample;
+
+if (Cancel Request?) then (Yes)
+
+  :Cancel AI Request;
+  stop
+
+else (No)
+
+endif
+
+|System|
+
+:Validate Drawing Data;
+:Prepare Image for Analysis;
+
+|AI Engine|
+
+:AI Model Processes Motor Features;
+
+if (Analysis Successful?) then (Yes)
+
+  :Generate Prediction Result;
+
+  |System|
+
+  :Save Result in Patient History;
+
+  |User|
+
+  :Display Test Result;
+
+  if (Download PDF Report?) then (Yes)
+
+    |System|
+
+    :Generate PDF File;
+
+    |User|
+
+    :Download PDF Report;
+
+  else (No)
+
+  endif
+
+  stop
+
+else (No)
+
+  |System|
+
+  :Display Analysis Error;
+
+  stop
+
+endif
+
+@enduml

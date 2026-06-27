@@ -1,0 +1,58 @@
+/* إعدادات الرابط الأساسية */
+.logoLink {
+  text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+/* حاوية الصورة (الأيقونة) */
+.logoIcon {
+  width: 48px; /* تكبير الحجم قليلاً لتبدو تفاصيل صورتك واضحة */
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* جعل الصورة دائرية تماماً لتبدو احترافية مع الخلفية السوداء */
+  border-radius: 50%;
+  overflow: hidden; /* إخفاء أي زوايا خارج الدائرة */
+
+  background-color: var(--bg-primary);
+
+  /* تأثيرات الحركة والتوهج */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  /* box-shadow: 0 0 10px rgba(20, 184, 166, 0.15); توهج خفيف باللون الفيروزي الأساسي */
+}
+
+/* تأثير التمرير (Hover) على الحاوية كاملة */
+.logo:hover .logoIcon {
+  transform: scale(1.08); /* تكبير سلس عند التمرير */
+  /* box-shadow: 0 0 18px rgba(20, 184, 166, 0.5); زيادة التوهج الفيروزي ليعطي تفاعل جميل */
+}
+
+/* الصورة بحد ذاتها داخل الحاوية */
+.logoImg {
+  width: 150%;
+  height: 150%;
+  object-fit: cover; /* لضمان أن الصورة تملأ الدائرة بشكل مثالي دون تشوه */
+}
+
+/* إعدادات النص */
+.logoText {
+  font-size: 1.35rem; /* تكبير الخط قليلاً ليتناسب مع حجم الصورة الجديد */
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.5px; /* تباعد بسيط بين الأحرف لشكل أكثر عصرية */
+}
+
+/* اللون الفيروزي لكلمة Sense */
+.secendColor {
+  color: var(--primary); /* سيعتمد على اللون #14b8a6 الذي حددته في مشروعك */
+}

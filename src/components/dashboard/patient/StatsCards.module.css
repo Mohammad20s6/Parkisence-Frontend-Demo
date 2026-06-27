@@ -1,0 +1,128 @@
+/* ===============================
+   GRID
+   =============================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 32px;
+  padding: 0 25px;
+}
+@media (min-width: 340px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 440px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* ===============================
+   CARD
+   =============================== */
+
+.card {
+  background: var(--bg-secondary);
+  max-width: 220px;
+  border: 1px solid var(--text-secondary);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+
+  border-radius: 18px;
+  padding: 10px 8px;
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  border-color: var(--border);
+  background: var(--hover-bg);
+  transform: translateY(-4px);
+}
+
+/* ===============================
+   INNER CONTENT
+   =============================== */
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 8px;
+}
+
+/* TEXT SIDE */
+
+.label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+/* ICON SIDE */
+
+.iconBox {
+  width: 48px;
+  height: 48px;
+  min-width: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--accent-soft);
+  color: var(--primary);
+}
+/* ===============================
+   ICON COLORS
+   =============================== */
+
+/* TOTAL TESTS */
+
+.totalIcon {
+  background: rgba(59, 130, 246, 0.15);
+
+  color: #3b82f6;
+}
+
+/* HEALTHY */
+
+.healthyIcon {
+  background: rgba(34, 197, 94, 0.15);
+
+  color: #22c55e;
+}
+
+/* PARKINSON */
+
+.parkinsonIcon {
+  background: rgba(239, 68, 68, 0.15);
+
+  color: #ef4444;
+}
+
+/* DATE */
+
+.dateIcon {
+  background: rgba(168, 85, 247, 0.15);
+
+  color: #a855f7;
+}

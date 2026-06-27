@@ -1,0 +1,306 @@
+@startuml Parkisense_UseCase_Diagram
+
+' ============================================================
+' Title and Metadata
+' ============================================================
+title **Parkisense — Intelligent Parkinson Detection Platform**\nUse Case Diagram
+caption Graduation Project — Parkisense System
+
+skinparam backgroundColor #FEFEFE
+skinparam shadowing true
+skinparam handwritten false
+
+skinparam usecase {
+  BackgroundColor #EAF2FB
+  BorderColor #2C6FAC
+  FontColor #1A1A2E
+  FontSize 12
+  ArrowColor #2C6FAC
+  StereotypeFontColor #555555
+  StereotypeFontSize 10
+}
+
+skinparam actor {
+  BackgroundColor #D5E8D4
+  BorderColor #2D6A4F
+  FontColor #1A1A2E
+  FontSize 13
+}
+
+skinparam rectangle {
+  BackgroundColor #F8F9FA
+  BorderColor #2C6FAC
+  FontColor #1A1A2E
+  FontSize 14
+  FontStyle bold
+  RoundCorner 15
+}
+
+skinparam note {
+  BackgroundColor #FFF9C4
+  BorderColor #F9A825
+  FontSize 10
+}
+
+' ============================================================
+' Actors
+' ============================================================
+actor "Guest" as Guest #D5E8D4
+actor "Patient" as Patient #BBDEFB
+actor "Admin" as Admin #FFCCBC
+actor "AI Prediction\nSystem" as AI #E1BEE7
+
+' ============================================================
+' System Boundary — Parkisense Platform
+' ============================================================
+rectangle "Parkisense Platform" {
+
+  ' ----------------------------------------------------------
+  ' Guest Use Cases
+  ' ----------------------------------------------------------
+  package "Public Access" <<Rectangle>> #F1F8E9 {
+    usecase "Register Account" as UC_Register
+    usecase "Login" as UC_Login
+    usecase "View Landing Page" as UC_LandingPage
+    usecase "View Articles" as UC_ViewArticles
+    usecase "View FAQs" as UC_ViewFAQs
+    usecase "Reset Password" as UC_ResetPassword
+    usecase "Verify Email" as UC_VerifyEmail
+  }
+
+  ' ----------------------------------------------------------
+  ' Patient Use Cases
+  ' ----------------------------------------------------------
+  package "Patient Portal" <<Rectangle>> #E3F2FD {
+    usecase "Logout" as UC_PatientLogout
+    usecase "Manage Profile" as UC_ManageProfile
+    usecase "Update Profile\nInformation" as UC_UpdateProfile
+    usecase "Upload Profile\nImage" as UC_UploadImage
+    usecase "Change Password" as UC_ChangePassword
+
+    usecase "Perform Voice Test" as UC_VoiceTest
+    usecase "Record Voice" as UC_RecordVoice
+    usecase "Upload Audio" as UC_UploadAudio
+
+    usecase "Perform Drawing Test" as UC_DrawingTest
+    usecase "Draw Spiral" as UC_DrawSpiral
+    usecase "Submit Drawing" as UC_SubmitDrawing
+
+    usecase "Perform Combined Test" as UC_CombinedTest
+
+    usecase "View Test Result" as UC_ViewResult
+    usecase "View Prediction\nConfidence" as UC_ViewConfidence
+    usecase "View Test History" as UC_TestHistory
+
+    usecase "View Dashboard" as UC_PatientDashboard
+    usecase "Read Educational\nArticles" as UC_ReadArticles
+    usecase "Submit Feedback" as UC_SubmitFeedback
+    usecase "Contact Support" as UC_ContactSupport
+  }
+
+  ' ----------------------------------------------------------
+  ' Admin Use Cases
+  ' ----------------------------------------------------------
+  package "Admin Panel" <<Rectangle>> #FBE9E7 {
+    usecase "Login as Admin" as UC_AdminLogin
+    usecase "Admin Logout" as UC_AdminLogout
+    usecase "Access Admin\nDashboard" as UC_AdminDashboard
+
+    usecase "Manage Patients" as UC_ManagePatients
+    usecase "View Patient\nDetails" as UC_ViewPatientDetails
+    usecase "Delete Patient" as UC_DeletePatient
+
+    usecase "Manage Tests" as UC_ManageTests
+    usecase "Filter Tests" as UC_FilterTests
+    usecase "View All Results" as UC_ViewAllResults
+
+    usecase "View Statistics" as UC_ViewStatistics
+
+    usecase "Manage Articles" as UC_ManageArticles
+    usecase "Add Article" as UC_AddArticle
+    usecase "Edit Article" as UC_EditArticle
+    usecase "Delete Article" as UC_DeleteArticle
+
+    usecase "Manage FAQs" as UC_ManageFAQs
+    usecase "Add FAQ" as UC_AddFAQ
+    usecase "Edit FAQ" as UC_EditFAQ
+    usecase "Delete FAQ" as UC_DeleteFAQ
+
+    usecase "Manage Feedbacks" as UC_ManageFeedbacks
+    usecase "Delete Feedback" as UC_DeleteFeedback
+
+    usecase "Monitor AI\nPredictions" as UC_MonitorAI
+  }
+
+  ' ----------------------------------------------------------
+  ' AI Prediction System Use Cases
+  ' ----------------------------------------------------------
+  package "AI Engine" <<Rectangle>> #F3E5F5 {
+    usecase "Analyze Voice\nRecording" as UC_AnalyzeVoice
+    usecase "Analyze Drawing\nImage" as UC_AnalyzeDrawing
+    usecase "Analyze Combined\nTest" as UC_AnalyzeCombined
+    usecase "Predict Parkinson\nProbability" as UC_PredictParkinson
+    usecase "Return Prediction\nResult" as UC_ReturnResult
+    usecase "Return Confidence\nScore" as UC_ReturnConfidence
+  }
+
+}
+
+' ============================================================
+' Actor → Use Case Associations
+' ============================================================
+
+' --- Guest associations ---
+Guest --> UC_Register
+Guest --> UC_Login
+Guest --> UC_LandingPage
+Guest --> UC_ViewArticles
+Guest --> UC_ViewFAQs
+Guest --> UC_ResetPassword
+Guest --> UC_VerifyEmail
+
+' --- Patient associations ---
+Patient --> UC_Login
+Patient --> UC_PatientLogout
+Patient --> UC_ManageProfile
+Patient --> UC_VoiceTest
+Patient --> UC_DrawingTest
+Patient --> UC_CombinedTest
+Patient --> UC_ViewResult
+Patient --> UC_TestHistory
+Patient --> UC_PatientDashboard
+Patient --> UC_ReadArticles
+Patient --> UC_SubmitFeedback
+Patient --> UC_ContactSupport
+
+' --- Admin associations ---
+Admin --> UC_AdminLogin
+Admin --> UC_AdminLogout
+Admin --> UC_AdminDashboard
+
+' --- AI Prediction System associations ---
+AI --> UC_AnalyzeVoice
+AI --> UC_AnalyzeDrawing
+AI --> UC_AnalyzeCombined
+AI --> UC_PredictParkinson
+AI --> UC_ReturnResult
+AI --> UC_ReturnConfidence
+
+' ============================================================
+' <<include>> Relationships
+' ============================================================
+
+' --- Manage Profile includes ---
+UC_ManageProfile ..> UC_UpdateProfile : <<include>>
+UC_ManageProfile ..> UC_UploadImage : <<include>>
+UC_ManageProfile ..> UC_ChangePassword : <<include>>
+
+' --- Perform Voice Test includes ---
+UC_VoiceTest ..> UC_RecordVoice : <<include>>
+UC_VoiceTest ..> UC_UploadAudio : <<include>>
+UC_VoiceTest ..> UC_AnalyzeVoice : <<include>>
+UC_VoiceTest ..> UC_PredictParkinson : <<include>>
+UC_VoiceTest ..> UC_ReturnResult : <<include>>
+
+' --- Perform Drawing Test includes ---
+UC_DrawingTest ..> UC_DrawSpiral : <<include>>
+UC_DrawingTest ..> UC_SubmitDrawing : <<include>>
+UC_DrawingTest ..> UC_AnalyzeDrawing : <<include>>
+UC_DrawingTest ..> UC_PredictParkinson : <<include>>
+UC_DrawingTest ..> UC_ReturnResult : <<include>>
+
+' --- Perform Combined Test includes ---
+UC_CombinedTest ..> UC_AnalyzeVoice : <<include>>
+UC_CombinedTest ..> UC_AnalyzeDrawing : <<include>>
+UC_CombinedTest ..> UC_AnalyzeCombined : <<include>>
+UC_CombinedTest ..> UC_PredictParkinson : <<include>>
+UC_CombinedTest ..> UC_ReturnConfidence : <<include>>
+
+' --- Admin Dashboard includes ---
+UC_AdminDashboard ..> UC_ViewStatistics : <<include>>
+UC_AdminDashboard ..> UC_ManagePatients : <<include>>
+UC_AdminDashboard ..> UC_ManageTests : <<include>>
+UC_AdminDashboard ..> UC_ManageArticles : <<include>>
+UC_AdminDashboard ..> UC_ManageFAQs : <<include>>
+UC_AdminDashboard ..> UC_ManageFeedbacks : <<include>>
+
+' --- Manage Patients includes ---
+UC_ManagePatients ..> UC_ViewPatientDetails : <<include>>
+UC_ManagePatients ..> UC_DeletePatient : <<include>>
+
+' --- Manage Tests includes ---
+UC_ManageTests ..> UC_FilterTests : <<include>>
+UC_ManageTests ..> UC_ViewAllResults : <<include>>
+
+' --- Manage Articles includes ---
+UC_ManageArticles ..> UC_AddArticle : <<include>>
+UC_ManageArticles ..> UC_EditArticle : <<include>>
+UC_ManageArticles ..> UC_DeleteArticle : <<include>>
+
+' --- Manage FAQs includes ---
+UC_ManageFAQs ..> UC_AddFAQ : <<include>>
+UC_ManageFAQs ..> UC_EditFAQ : <<include>>
+UC_ManageFAQs ..> UC_DeleteFAQ : <<include>>
+
+' --- Manage Feedbacks includes ---
+UC_ManageFeedbacks ..> UC_DeleteFeedback : <<include>>
+
+' ============================================================
+' <<extend>> Relationships
+' ============================================================
+
+' --- View Test Result extends ---
+UC_ViewConfidence ..> UC_ViewResult : <<extend>>
+
+' ============================================================
+' Notes
+' ============================================================
+note right of AI
+  The AI Prediction System
+  is an external automated actor.
+  It processes patient test data
+  using trained ML models and
+  returns diagnostic predictions
+  with confidence scores.
+end note
+
+note left of Guest
+  Unauthenticated users
+  can browse public content,
+  register, and verify
+  their email to become
+  a Patient.
+end note
+
+note bottom of UC_CombinedTest
+  Combines both voice and
+  drawing analyses for a
+  more comprehensive
+  Parkinson prediction.
+end note
+
+note bottom of UC_AdminDashboard
+  Central hub for all
+  administrative operations
+  including patient, test,
+  article, FAQ, and
+  feedback management.
+end note
+
+' ============================================================
+' Legend
+' ============================================================
+legend right
+  |= Actor |= Role |
+  | Guest | Unauthenticated visitor |
+  | Patient | Registered & logged-in user |
+  | Admin | System administrator |
+  | AI Prediction System | Automated ML engine |
+  --
+  **Relationships**
+  ── Association
+  ··> <<include>>  Mandatory sub-flow
+  ··> <<extend>>   Optional/conditional sub-flow
+endlegend
+
+@enduml

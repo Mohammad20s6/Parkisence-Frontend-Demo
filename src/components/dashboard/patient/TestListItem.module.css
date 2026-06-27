@@ -1,0 +1,131 @@
+.row {
+  background-color: var(--bg-primary);
+  box-shadow: 0 8px 30px rgba(30, 50, 50, 0.35);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 24px;
+
+  text-decoration: none;
+  /* color: inherit; */
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: background 0.2s ease;
+}
+
+.row:hover {
+  background-color: var(--hover-bg);
+  border: 1px solid var(--text-secondary);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 12px;
+  background-color: var(--icon-bg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-primary);
+}
+.primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+}
+.accent {
+  background: linear-gradient(135deg, var(--info), var(--info-soft));
+  background: var(--info);
+}
+
+.success {
+  background: var(--health);
+  /* background: linear-gradient(135deg, var(--health), var(--health-soft)); */
+}
+
+.name {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.date {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 6px;
+}
+
+.right {
+  text-align: right;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 600;
+
+  padding: 6px 14px;
+
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================= */
+/* ========= HEALTHY =========== */
+/* ============================= */
+
+.healthy {
+  background-color: rgba(34, 197, 94, 0.15);
+
+  color: #22c55e;
+
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+/* ============================= */
+/* ========= PARKINSON ========= */
+/* ============================= */
+
+.parkinson {
+  background-color: rgba(239, 68, 68, 0.15);
+
+  color: #ef4444;
+
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* ============================= */
+/* ============ FAILED ========= */
+/* ============================= */
+
+.failed {
+  background-color: rgba(234, 179, 8, 0.15);
+
+  color: #eab308;
+
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}

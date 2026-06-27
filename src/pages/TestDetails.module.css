@@ -1,0 +1,367 @@
+/* ========================================= */
+/* ========= Duplicate Alert Message ======= */
+/* ========================================= */
+
+.duplicateAlert {
+  max-width: 620px;
+  margin: 0 auto 24px auto;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-right: 4px solid #0ea5e9; /* خط أزرق دلالي يبرز الرسالة */
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  animation: slideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.duplicateIconWrapper {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background-color: rgba(14, 165, 233, 0.08); /* لون أزرق شفاف */
+  border: 1px solid rgba(14, 165, 233, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0ea5e9;
+}
+
+.duplicateContent {
+  flex: 1;
+  min-width: 0;
+  padding-top: 4px;
+}
+
+.duplicateTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.duplicateText {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================= */
+/* ========= Main Page Layout ============ */
+/* ========================================= */
+
+.page {
+  width: 100%;
+  padding: 24px 20px 40px;
+}
+
+.backBtn {
+  max-width: 620px;
+  margin: 0 100px 14px 96px;
+}
+.container {
+  max-width: 620px;
+  margin: 0 auto;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.headerContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--text-secondary);
+}
+
+.actions {
+  flex-shrink: 0;
+}
+
+.secondaryBtn {
+  height: 46px;
+  padding: 0 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.secondaryBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: var(--hover-bg);
+  transform: translateY(-1px);
+}
+
+.secondaryBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.resultBadge {
+  margin-top: 28px;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.resultBadge svg {
+  flex-shrink: 0;
+}
+
+/* Healthy */
+.healthyBg {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.25);
+}
+
+.healthyBg svg,
+.healthyText {
+  color: #22c55e;
+}
+
+/* Parkinson */
+.parkinsonBg {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.parkinsonBg svg,
+.parkinsonText {
+  color: #ef4444;
+}
+
+/* Failed */
+.failedBg {
+  background: rgba(234, 179, 8, 0.12);
+  border-color: rgba(234, 179, 8, 0.25);
+}
+
+.failedBg svg,
+.failedText {
+  color: #eab308;
+}
+
+.adviceCard {
+  max-width: 620px;
+  margin: 22px auto 0;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.adviceIcon {
+  width: 62px;
+  height: 62px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.adviceContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.adviceTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.adviceText {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ========================================= */
+/* ========= Media Queries ================= */
+/* ========================================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .page {
+    padding: 20px 14px 32px;
+  }
+
+  .duplicateAlert,
+  .container,
+  .adviceCard {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .secondaryBtn {
+    width: 100%;
+  }
+
+  .resultBadge {
+    min-height: 66px;
+    font-size: 15px;
+  }
+
+  .adviceCard {
+    flex-direction: column;
+  }
+
+  .adviceIcon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .adviceTitle {
+    font-size: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .duplicateAlert {
+    padding: 18px 16px;
+    gap: 14px;
+    border-radius: 18px;
+  }
+
+  .duplicateIconWrapper {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+  }
+
+  .duplicateTitle {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .meta {
+    font-size: 13px;
+  }
+
+  .resultBadge {
+    padding: 16px;
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .resultBadge svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .secondaryBtn {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .adviceTitle {
+    font-size: 18px;
+  }
+
+  .adviceText,
+  .duplicateText {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}

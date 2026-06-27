@@ -1,0 +1,570 @@
+{
+  "common": {
+    "back": "رجوع",
+    "cancel": "إلغاء",
+    "submit": "إرسال",
+    "reset": "إعادة تعيين",
+    "delete": "حذف",
+    "save": "حفظ",
+    "editProfile": "تعديل الملف",
+    "or": "أو",
+    "loading": "جارٍ التحميل...",
+    "saving": "جارٍ الحفظ...",
+    "adding": "جارٍ الإضافة...",
+    "deleting": "جارٍ الحذف...",
+    "signingIn": "جارٍ تسجيل الدخول...",
+    "creatingAccount": "جارٍ إنشاء الحساب...",
+    "sending": "جارٍ الإرسال...",
+    "recording": "جارٍ التسجيل...",
+    "cancelUpper": "إلغاء",
+    "view": "عرض",
+    "viewAll": "عرض الكل",
+    "refreshPage": "تحديث الصفحة",
+    "featured": "مميز",
+    "readFullArticle": "قراءة المقال كاملًا",
+    "readMore": "اقرأ المزيد",
+    "male": "ذكر",
+    "female": "أنثى",
+    "selectGender": "اختر الجنس",
+    "emailCannotChange": "لا يمكن تغيير البريد الإلكتروني",
+    "bullet": "•",
+    "testsWord": "اختبارات",
+    "testWord": "اختبار",
+    "riskWord": "مخاطر"
+  },
+  "navbar": {
+    "home": "الرئيسية",
+    "features": "المميزات",
+    "how": "كيف يعمل",
+    "articles": "المقالات",
+    "faq": "الأسئلة الشائعة",
+    "feedback": "التغذية الراجعة",
+    "dashboard": "لوحة التحكم",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "toggleTheme": "تبديل النمط",
+    "toggleMenu": "تبديل القائمة",
+    "toggleLanguage": "تبديل اللغة",
+    "logoutConfirm": "هل انت متاكد من تسجيل الخروج؟",
+    "logoutYes": "خروج",
+    "logoutNo": "الغاء"
+  },
+  "adminNav": {
+    "dashboard": "لوحة التحكم",
+    "patients": "المرضى",
+    "results": "النتائج",
+    "articles": "المقالات",
+    "faq": "الأسئلة الشائعة",
+    "feedback": "التغذية الراجعة",
+    "logout": "تسجيل الخروج",
+    "toggleTheme": "تبديل النمط",
+    "toggleLanguage": "تبديل اللغة",
+    "closeMenu": "إغلاق القائمة"
+  },
+  "footer": {
+    "brandDesc": "منصة مدعومة بالذكاء الاصطناعي للكشف المبكر والمراقبة المستمرة لمرض باركنسون عبر تحليل الصوت والحركة.",
+    "quickLinks": "روابط سريعة",
+    "ourTests": "اختباراتنا",
+    "voiceTest": "اختبار الصوت",
+    "drawingTest": "اختبار الرسم",
+    "combinedAnalysis": "تحليل مشترك",
+    "contact": "تواصل",
+    "damascus": "دمشق، سوريا",
+    "email": "support@parkisense.com",
+    "phone": "+963 930 850 447",
+    "copyright": "© 2026 باركي سينس. جميع الحقوق محفوظة.",
+    "madeWith": "صُنع بـ",
+    "forBetterHealth": "لصحة أفضل",
+    "privacyPolicy": "سياسة الخصوصية",
+    "termsOfService": "شروط الخدمة"
+  },
+  "hero": {
+    "badge": "تقنية طبية مدعومة بالذكاء الاصطناعي",
+    "titleLead": "الكشف المبكر عن",
+    "titleHighlight": "مرض باركنسون",
+    "description": "تحليل متقدم مدعوم بالذكاء الاصطناعي يجمع بين أنماط الصوت واختبارات التحكم الحركي للكشف المبكر الدقيق والمتابعة.",
+    "startAssessment": "ابدأ التقييم",
+    "learnMore": "اعرف المزيد",
+    "accuracyRate": "معدل الدقة",
+    "testsAnalyzed": "الاختبارات التي تم تحليلها",
+    "available": "متاح",
+    "voiceAnalysis": "تحليل الصوت",
+    "drawingAnalysis": "تحليل الرسم",
+    "accuracyVoice": "دقة 98.5%",
+    "accuracyDrawing": "دقة 97.5%"
+  },
+  "features": {
+    "title": "تحليل شامل",
+    "subtitle": "منصتنا تجمع بين عدة أساليب تشخيصية للحصول على نتائج دقيقة",
+    "voiceTitle": "تحليل الصوت",
+    "voiceDesc": "يحلل الذكاء الاصطناعي المتقدم أنماط الصوت الدقيقة والارتعاشات التي قد تشير إلى أعراض باركنسون المبكرة.",
+    "drawingTitle": "اختبار الرسم",
+    "drawingDesc": "تقييم تفاعلي للتحكم الحركي عبر تمارين رسم يدوي دقيقة.",
+    "combinedTitle": "تحليل مشترك",
+    "combinedDesc": "دقة محسنة عبر دمج تقييمات الصوت والحركة للحصول على نتائج شاملة."
+  },
+  "how": {
+    "title": "كيف يعمل",
+    "subtitle": "عملية بسيطة وآمنة ومثبتة علميًا",
+    "step1Title": "إنشاء حساب",
+    "step1Desc": "سجّل كمريض  باستخدام مصادقة آمنة.",
+    "step2Title": "أكمل الاختبارات",
+    "step2Desc": "أجرِ اختبارات الصوت والرسم من منزلك بسهولة.",
+    "step3Title": "تحليل الذكاء الاصطناعي",
+    "step3Desc": "تحلل الخوارزميات المتقدمة نتائجك لاكتشاف العلامات المبكرة.",
+    "step4Title": "احصل على النتائج",
+    "step4Desc": "استلم تقارير مفصلة وتوصيات من الخبراء."
+  },
+  "security": {
+    "badge": "الأمان أولًا",
+    "title": "بياناتك الصحية آمنة",
+    "subtitle": "نحن نعطي الأولوية لخصوصيتك وأمان بياناتك",
+    "encryptionTitle": "تشفير من الطرف إلى الطرف",
+    "encryptionDesc": "بياناتك محمية بتشفير 256-بت بمستوى عسكري أثناء التخزين والنقل.",
+    "hipaaTitle": "متوافق مع HIPAA",
+    "hipaaDesc": "نتبع معايير صارمة لحماية بيانات الرعاية الصحية لضمان خصوصيتك.",
+    "privacyTitle": "الخصوصية أولًا",
+    "privacyDesc": "بياناتك الطبية لا تتم مشاركتها أو بيعها أبدًا. لديك تحكم كامل بمعلوماتك.",
+    "certHipaa": "معتمد HIPAA",
+    "certSoc": "SOC 2 النوع الثاني",
+    "certIso": "ISO 27001",
+    "certGdpr": "متوافق مع GDPR"
+  },
+  "cta": {
+    "badge": "موثوق من أكثر من 10,000 متخصص صحي",
+    "titleLead": "خذ الخطوة الأولى نحو",
+    "titleHighlight": "الكشف المبكر",
+    "description": "انضم إلى آلاف المرضى الذين يستخدمون ParkiSense لفحص باركنسون موثوق ومدعوم بالذكاء الاصطناعي بدقة سريرية.",
+    "startAssessment": "ابدأ التقييم",
+    "login": "تسجيل الدخول",
+    "hipaaTitle": "متوافق مع HIPAA",
+    "securePrivate": "آمن وخاص",
+    "resultsMinutes": "نتائج خلال دقائق",
+    "fastAnalysis": "تحليل سريع",
+    "clinicalTitle": "مثبت سريريًا",
+    "researchBacked": "مدعوم بالأبحاث"
+  },
+  "auth": {
+    "login": {
+      "welcomeBack": "مرحبًا بعودتك",
+      "subtitle": "سجّل الدخول لمتابعة رحلتك الصحية",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "forgotPassword": "هل نسيت كلمة المرور؟",
+      "signIn": "تسجيل الدخول",
+      "noAccount": "ليس لديك حساب؟",
+      "sideTitle": "تقنية طبية مدعومة بالذكاء الاصطناعي",
+      "sideText": "تحليل متقدم لأنماط الصوت والحركة للكشف المبكر عن أعراض مرض باركنسون."
+    },
+    "register": {
+      "sideTitle": "ابدأ رحلتك الصحية",
+      "sideText": "انضم إلى آلاف المرضى الذين يثقون بـ ParkiSense للكشف المبكر عن مرض باركنسون.",
+      "title": "إنشاء حساب",
+      "subtitle": "أنشئ حسابًا للبدء",
+      "fullName": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "hasAccount": "لديك حساب بالفعل؟"
+    },
+    "placeholders": {
+      "email": "you@example.com",
+      "password": "••••••••",
+      "fullName": "جون دو"
+    },
+    "errors": {
+      "noAccount": "لا يوجد حساب بهذا البريد",
+      "wrongPassword": "كلمة المرور غير صحيحة",
+      "fullNameRequired": "الاسم الكامل مطلوب",
+      "passwordLength": "يجب أن تكون كلمة المرور 8 أحرف على الأقل",
+      "emailRegistered": "البريد الإلكتروني مسجّل مسبقًا",
+      "failedCreate": "فشل إنشاء الحساب",
+      "noUser": "لا يوجد مستخدم مسجّل الدخول",
+      "failedUpdate": "فشل تحديث الملف"
+    }
+  },
+  "articlesPage": {
+    "badge": "موارد تعليمية",
+    "title": "مقالات ورؤى",
+    "description": "استكشف مقالات موثوقة طبية وبحثية حول مرض باركنسون وطرق الكشف المبكر والحفاظ على صحة الدماغ.",
+    "emptyTitle": "عذرًا، لا توجد مقالات بعد",
+    "emptyText": "يبدو أنه لا توجد مقالات متاحة حاليًا. يرجى العودة لاحقًا لمحتوى تعليمي وتحديثات جديدة.",
+    "noMoreTitle": "عذرًا، لا توجد مقالات إضافية",
+    "noMoreText": "لا توجد لدينا حاليًا مقالات إضافية. يرجى العودة لاحقًا لمزيد من التحديثات.",
+    "failedFetch": "فشل في جلب المقالات"
+  },
+  "faqPage": {
+    "badge": "مركز المساعدة",
+    "title": "الأسئلة الشائعة",
+    "description": "اعثر على إجابات للأسئلة الشائعة حول مرض باركنسون ومنصتنا.",
+    "emptyTitle": "عذرًا، لا توجد أسئلة متاحة",
+    "emptyText": "لم نتمكن من العثور على أسئلة شائعة حاليًا. يرجى العودة لاحقًا أو التواصل مع الدعم للمساعدة.",
+    "stillQuestions": "ما زالت لديك أسئلة؟",
+    "stillQuestionsText": "لا تجد الإجابة التي تبحث عنها؟ نحن هنا للمساعدة.",
+    "contactSupport": "تواصل مع الدعم",
+    "failedFetch": "فشل في جلب الأسئلة الشائعة"
+  },
+  "feedbackPage": {
+    "badge": "رأيك يهمنا",
+    "title": "شاركنا ملاحظاتك",
+    "description": "ساعدنا على تحسين ParkiSense عبر مشاركة تجربتك واقتراحاتك",
+    "rateQuestion": "كيف تقيّم تجربتك؟",
+    "yourFeedback": "ملاحظاتك",
+    "placeholder": "شارك أفكارك...",
+    "submit": "إرسال الملاحظات",
+    "success": "✅ تم إرسال ملاحظاتك بنجاح!",
+    "error": "❌ فشل إرسال الملاحظات. يرجى المحاولة مرة أخرى.",
+    "note": "تُرسل ملاحظاتك بأمان إلى فريق الإدارة لدينا بهدف تحسين وتطوير تجربتك.",
+    "failedSend": "فشل في الإرسال",
+    "requestCancelled": "تم إلغاء الطلب",
+    "subject": "الموضوع",
+    "categoryOptional": "التصنيف (اختياري)",
+    "subjectPlaceholder": "ما موضوع ملاحظاتك؟"
+  },
+  "voiceTest": {
+    "title": "Voice Analysis Test :",
+    "description": "يرجى نطق الصوت التالي بوضوح لمدة 3 ثوانٍ.",
+    "instructionsTitle": "Instractions :",
+    "instruction1": "اختر بيئة هادئة بأقل ضوضاء خلفية.",
+    "instruction2": "تحدث بوضوح وبوتيرة طبيعية.",
+    "instruction3": "خذ نفسًا عميقًا.",
+    "instruction4": "اقرأ الكلمة المعروضة لمدة 3-5 ثوانٍ.",
+    "instruction5": "أبقِ الجهاز على بُعد 6-12 سم من فمك.",
+    "recordHint": "سجّل صوتك كهذا المثال أو ارفع ملفًا :",
+    "testWord": "Aaaaaaa",
+    "durationHint": "المدة: 3-5 ثوانٍ",
+    "exampleRecord": "Example Record :",
+    "recordingComplete": "اكتمل التسجيل.",
+    "yourRecording": "تسجيلك أو الملف الصوتي المرفوع :",
+    "uploadAudio": " رفع ملف صوتي ( صيغة wav)",
+    "invalidAudio": "يرجى رفع ملف صوتي صالح.",
+    "failedSave": "فشل حفظ النتيجة",
+    "failedAnalyze": "فشل تحليل الصوت."
+  },
+  "drawingTest": {
+    "title": "اختبار تحليل الرسم :",
+
+    "spiral": "حلزون",
+    "wave": "موجة",
+
+    "spiralDescription": "ارسم شكلاً حلزونياً بشكل طبيعي داخل مساحة الرسم مع الحفاظ على حركة يد سلسة وثابتة.",
+    "waveDescription": "ارسم نمط موجة بسلاسة داخل مساحة الرسم باستخدام حركة يد متواصلة ومتحكم بها.",
+
+    "instructionsTitle": "التعليمات :",
+
+    "spiralInstruction1": "ارسم الشكل الحلزوني بحرية داخل مساحة الرسم باستخدام حركة متواصلة.",
+    "spiralInstruction2": "حاول الحفاظ على تباعد متناسق بين لفات الحلزون قدر الإمكان.",
+    "spiralInstruction3": "تجنب التوقف المفاجئ أو الحركات الحادة أثناء الرسم.",
+
+    "waveInstruction1": "ارسم نمط موجة متواصل من أحد طرفي المساحة إلى الطرف الآخر.",
+    "waveInstruction2": "حافظ على حركة صعود وهبوط سلسة ومتوازنة أثناء الرسم.",
+    "waveInstruction3": "حاول الحفاظ على استقرار شكل الموجة دون تغييرات حادة في الاتجاه.",
+
+    "howToDraw": "الشكل المرجعي :",
+
+    "spiralDrawHeaderTitle": "منطقة رسم الحلزون",
+    "waveDrawHeaderTitle": "منطقة رسم الموجة",
+
+    "spiralDrawHeaderSubtitle": "ارسم الشكل الحلزوني بشكل طبيعي داخل مساحة الرسم.",
+    "waveDrawHeaderSubtitle": "ارسم نمط الموجة بسلاسة داخل مساحة الرسم.",
+
+    "reset": "إعادة تعيين",
+    "uploadImage": "رفع صورة",
+
+    "failedSave": "فشل حفظ النتيجة",
+    "failedAnalyze": "فشل تحليل الرسم",
+    "spiralPattern": "حلزوني",
+    "wavePattern": "موجي"
+  },
+  "testDetails": {
+    "healthy": "سليم",
+    "parkinson": "تم اكتشاف باركنسون",
+    "goodNews": "أخبار سارة!",
+    "medicalAdvice": "نصيحة طبية",
+    "defaultHealthyAdvice": "لا توجد علامات لمرض باركنسون. حافظ على نمط حياة صحي.",
+    "defaultParkinsonAdvice": "تم اكتشاف مرض باركنسون. يرجى استشارة طبيب أعصاب للتقييم والعلاج.",
+    "pdfResult": "النتيجة",
+    "pdfAdvice": "النصيحة",
+    "failed": "فشل",
+    "analysisFailed": "فشل تحليل الاختبار",
+    "analysisResults": "نتيجة التحليل",
+    "downloadPdf": "تحميل ملف PDF",
+    "failedAdvice": "تعذر تحليل الملف المرفوع. يرجى رفع ملف صالح وواضح والمحاولة مرة أخرى.",
+    "duplicateTitle": "ملف مفحوص مسبقاً",
+    "duplicateMsg": "لقد قمت برفع هذا الملف من قبل.  تم عرض نتيجة الفحص المحفوظة لدينا."
+  },
+  "patient": {
+    "dashboard": {
+      "welcome": "مرحبًا، {{name}}! 👋",
+      "subtitle": "تابع تقدمك الصحي وأجرِ تقييمات جديدة."
+    },
+    "quickActions": {
+      "heading": "إجراءات سريعة",
+      "voiceTitle": "اختبار الصوت",
+      "voiceDesc": "تحليل أنماط الكلام",
+      "drawingTitle": "اختبار الرسم",
+      "drawingDesc": "تقييم التحكم اليدوي",
+      "combinedTitle": "اختبار مشترك",
+      "combinedDesc": "تقييم شامل"
+    },
+    "healthSummary": {
+      "heading": "ملخص الصحة",
+      "healthScore": "درجة الصحة",
+      "voiceTest": "اختبار الصوت",
+      "drawingTest": "اختبار الرسم",
+      "combinedTest": "اختبار مشترك"
+    },
+    "recentTests": {
+      "title": "الاختبارات الأخيرة",
+      "viewAll": "عرض الكل",
+      "empty": "لا توجد اختبارات بعد..."
+    },
+    "testsHistory": {
+      "title": "سجل الاختبارات",
+      "subtitle": "اعرض وتتبع سجل تقييماتك",
+      "filterAllTests": "كل الاختبارات",
+      "filterVoice": "صوت",
+      "filterDrawing": "رسم",
+      "filterCombined": "مشترك",
+      "failed": "فشل",
+      "healthy": "سليم",
+      "parkinson": "باركنسون"
+    },
+    "profile": {
+      "title": "إعدادات الملف",
+      "subtitle": "إدارة معلوماتك الشخصية",
+      "fullName": "الاسم الكامل",
+      "emailAddress": "البريد الإلكتروني",
+      "birthDate": "الميلاد",
+      "gender": "الجنس",
+      "phone": "رقم الهاتف",
+      "cancel": "إلغاء",
+      "editProfile": "تعديل الملف",
+      "save": "حفظ",
+      "updated": "تم تحديث الملف بنجاح ✅",
+      "error": "حدث خطأ ما ❌"
+    },
+    "statsCards": {
+      "totalTests": "إجمالي الاختبارات",
+      "averageAcore": "متوسط الدرجة",
+      "normalTests": "الاختبارات السليمة",
+      "abnormalTests": "الاختبارات غير السليمة",
+      "healthStatues": "الحالة الصحية",
+      "lastTest": "آخر اختبار"
+    },
+    "errors": {
+      "failedPatient": "فشل جلب بيانات المريض",
+      "failedTests": "فشل جلب الاختبارات",
+      "generic": "حدث خطأ ما",
+      "noData": "لا توجد بيانات"
+    },
+    "status": {
+      "Moderate": "متوسط",
+      "Unknown": "غير معروف"
+    }
+  },
+  "filters": {
+    "allLevels": "كل المستويات",
+    "allRisks": "كل المخاطر",
+    "allRatings": "كل التقييمات",
+    "lowRisk": "مخاطر منخفضة",
+    "moderate": "متوسط",
+    "moderateRisk": "مخاطر متوسطة",
+    "highRisk": "مخاطر عالية",
+    "searchNameEmail": "البحث بالاسم أو البريد...",
+    "star5": "⭐ 5 نجوم",
+    "star4": "⭐ 4 نجوم",
+    "star3": "⭐ 3 نجوم",
+    "star2": "⭐ نجمتان",
+    "star1": "⭐ نجمة واحدة"
+  },
+  "admin": {
+    "panelBadge": "لوحة الإدارة",
+    "feedback": {
+      "searchPlaceholder": "البحث في الملاحظات...",
+      "feedbacks": "الملاحظات",
+      "avgRating": "متوسط التقييم",
+      "failedFetch": "فشل جلب الملاحظات",
+      "tableUser": "المستخدم",
+      "tableMessage": "الرسالة",
+      "tableRating": "التقييم",
+      "tableDate": "التاريخ",
+      "tableActions": "إجراءات",
+      "modalTitle": "تفاصيل الملاحظة",
+      "noResults": "لا توجد ملاحظات"
+    },
+    "articles": {
+      "title": "إدارة المقالات",
+      "description": "أضف أو عدّل أو احذف المقالات للمستخدمين.",
+      "searchPlaceholder": "البحث في المقالات...",
+      "articlesCount": "مقالات",
+      "addArticle": "إضافة مقال",
+      "emptyTitle": "لا توجد مقالات",
+      "emptyText": "جرّب البحث أو أضف مقالًا جديدًا.",
+      "deleteTitle": "حذف المقال",
+      "deleteConfirm": "هل أنت متأكد من حذف هذا المقال؟",
+      "failedFetch": "فشل جلب المقالات",
+      "failedDelete": "فشل حذف المقالات",
+      "toastDeleted": "تم حذف المقالات بنجاح ✅",
+      "toastAdded": "تمت إضافة المقال بنجاح ✅",
+      "toastUpdated": "تم تحديث المقال بنجاح ✏️",
+      "addModalTitle": "إضافة مقال جديد",
+      "editModalTitle": "تعديل المقال",
+      "labelTitle": "العنوان *",
+      "labelSummary": "الملخص *",
+      "labelCategory": "التصنيف *",
+      "labelReadTime": "وقت القراءة *",
+      "labelLink": "رابط المقال *",
+      "placeholderTitle": "أدخل عنوان المقال",
+      "placeholderSummary": "وصف قصير",
+      "placeholderReadTime": "مثال: 5 min",
+      "placeholderLink": "https://example.com",
+      "selectCategory": "اختر التصنيف",
+      "addArticleBtn": "إضافة مقال",
+      "saveChanges": "حفظ التغييرات",
+      "allFieldsRequired": "جميع الحقول مطلوبة",
+      "failedAdd": "فشل إضافة المقال",
+      "failedUpdate": "فشل تحديث المقال"
+    },
+    "faq": {
+      "title": "إدارة الأسئلة الشائعة",
+      "description": "حرّر أو احذف أو أدِر الأسئلة الشائعة.",
+      "searchPlaceholder": "البحث حسب السؤال...",
+      "faqsCount": "أسئلة شائعة",
+      "addFaq": "إضافة سؤال",
+      "emptyTitle": "لا توجد أسئلة شائعة",
+      "emptyText": "غيّر البحث أو أضف سؤالًا جديدًا.",
+      "deleteTitle": "حذف السؤال",
+      "deleteConfirm": "هل أنت متأكد من حذف هذا السؤال؟ لا يمكن التراجع عن هذا الإجراء.",
+      "failedFetch": "فشل جلب الأسئلة الشائعة",
+      "failedDelete": "فشل حذف السؤال",
+      "toastDeleted": "تم حذف السؤال بنجاح ✅",
+      "toastAdded": "تمت إضافة السؤال بنجاح ✅",
+      "toastUpdated": "تم تحديث السؤال بنجاح ✏️",
+      "addModalTitle": "إضافة سؤال جديد",
+      "editModalTitle": "تعديل السؤال",
+      "labelQuestion": "السؤال *",
+      "labelAnswer": "الإجابة *",
+      "placeholderQuestion": "أدخل السؤال",
+      "placeholderAnswer": "أدخل الإجابة",
+      "addFaqBtn": "إضافة سؤال",
+      "failedAdd": "فشل إضافة السؤال",
+      "failedUpdate": "فشل تحديث السؤال",
+      "allFieldsRequired": "جميع الحقول مطلوبة"
+    },
+    "category": {
+      "general": "عام",
+      "medical": "طبي",
+      "technical": "تقني"
+    },
+    "tables": {
+      "patient": "المريض",
+      "age": "العمر",
+      "gender": "الجنس",
+      "phone": "الهاتف",
+      "accountCreated": "تاريخ إنشاء الحساب",
+      "tests": "الاختبارات",
+      "riskLevel": "مستوى المخاطر",
+      "testType": "نوع الاختبار",
+      "date": "التاريخ",
+      "score": "الدرجة",
+      "confidence": "الثقة",
+      "result": "النتيجة",
+      "noPatients": "لا يوجد مرضى",
+      "noTests": "لا توجد اختبارات",
+      "totalPatients": "إجمالي المرضى"
+    },
+    "stats": {
+      "totalPatients": "إجمالي المرضى",
+
+      "lowRisk": "مخاطر منخفضة",
+      "moderateRisk": "مخاطر متوسطة",
+      "highRisk": "مخاطر عالية",
+
+      "voiceResult": "حالات الصوت",
+      "drawingResult": "حالات الرسم",
+      "combinedResult": "حالات الدمج",
+
+      "totalTests": "إجمالي الاختبارات",
+      "totalTestsDashboard": "إجمالي الاختبارات",
+
+      "voiceTests": "اختبارات الصوت",
+      "drawingTests": "اختبارات الرسم",
+      "combinedTests": "الاختبارات المشتركة",
+
+      "avgScore": "متوسط النتائج",
+
+      "normalTests": "الحالات السليمة",
+      "abnormalTests": "حالات باركنسون",
+
+      "lastTest": "آخر اختبار",
+
+      "newPatients": "مرضى جدد",
+      "testsConducted": "الاختبارات المنجزة"
+    },
+
+    "analytics": {
+      "testDistribution": "توزيع الاختبارات",
+
+      "riskDistribution": "توزيع المخاطر",
+
+      "resultDistribution": "توزيع اكتشاف باركنسون",
+
+      "thisMonth": "إحصائيات هذا الشهر"
+    },
+
+    "recentActivity": {
+      "recentTests": "الاختبارات الحديثة",
+      "recentPatients": "المرضى الجدد"
+    },
+
+    "activity": {
+      "testMeta": "{{typeLabel}} • {{date}}",
+
+      "patientTestsLine": "{{count}} اختبارات",
+
+      "patientRiskBadge": "مخاطر {{level}}"
+    },
+
+    "filters": {
+      "allTests": "كل الاختبارات",
+
+      "voiceTest": "اختبار الصوت",
+
+      "drawingTest": "اختبار الرسم",
+      "combinedTest": "اختبار مشترك"
+    },
+
+    "riskBadge": {
+      "low": "منخفض",
+      "moderate": "متوسط",
+      "high": "مرتفع"
+    },
+
+    "results": {
+      "allResults": "كل النتائج",
+      "healthy": "سليم",
+      "parkinson": "باركنسون"
+    },
+    "stub": {
+      "combinedTest": "هذه المساحة مخصصة للاختبار المشترك...",
+      "adminFaq": "هذه المساحة مخصصة لإدارة الأسئلة الشائعة..."
+    }
+  },
+  "tests": {
+    "typeLabel": "{{type}} اختبار",
+    "voice": "صوت",
+    "drawing": "رسم",
+    "combined": "مشترك"
+  },
+  "errors": {
+    "generic": "حدث خطأ ما"
+  },
+  "combinedTestPage": {
+    "placeholder": "هنا مساحة الاختبار المشترك...."
+  },
+  "adminFaqPage": {
+    "placeholder": "هنا مساحة الأسئلة الشائعة للإدارة..."
+  }
+}

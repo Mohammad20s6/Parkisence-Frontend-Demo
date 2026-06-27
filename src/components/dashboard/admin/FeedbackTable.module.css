@@ -1,0 +1,131 @@
+.container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* patient */
+
+.patientCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--border);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0px;
+  color: var(--text-primary);
+}
+
+.email {
+  font-size: 12px;
+  margin-top: 0px;
+  color: var(--text-secondary);
+}
+
+/* MESSAGE */
+.messageCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  max-width: 260px;
+}
+
+.messageIcon {
+  color: var(--text-secondary);
+}
+
+.message {
+  font-size: 13px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* RATING */
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.starFilled {
+  color: #facc15;
+  stroke: #facc15;
+}
+
+.starEmpty {
+  color: #e5e7eb;
+}
+
+/* DATE */
+.date {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+/* BUTTON */
+.viewBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--color-primary-500);
+  color: var(--text-primary);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.viewBtn:hover {
+  color: var(--text-secondary);
+  background-color: var(--bg-card);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .messageCell {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 13px;
+  }
+
+  .email {
+    font-size: 11px;
+  }
+
+  .message {
+    font-size: 12px;
+  }
+
+  .viewBtn {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,152 @@
+@startuml Admin_UseCase
+title **Parkisense — Admin Use Case Diagram**\nIntelligent Parkinson Detection Platform
+
+' ============================================================
+' Style Configuration
+' ============================================================
+skinparam actorStyle awesome
+skinparam handwritten false
+skinparam shadowing true
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+
+skinparam usecase {
+  BackgroundColor #FFEBEE
+  BorderColor #C62828
+  FontColor #B71C1C
+  FontSize 11
+  StereotypeFontSize 9
+  BackgroundColor<<auth>> #F3E5F5
+  BorderColor<<auth>> #7B1FA2
+  FontColor<<auth>> #4A148C
+  BackgroundColor<<dash>> #E8EAF6
+  BorderColor<<dash>> #283593
+  FontColor<<dash>> #1A237E
+  BackgroundColor<<patient>> #E3F2FD
+  BorderColor<<patient>> #1565C0
+  FontColor<<patient>> #0D47A1
+  BackgroundColor<<test>> #FFF3E0
+  BorderColor<<test>> #E65100
+  FontColor<<test>> #BF360C
+  BackgroundColor<<article>> #E8F5E9
+  BorderColor<<article>> #2E7D32
+  FontColor<<article>> #1B5E20
+  BackgroundColor<<faq>> #E0F7FA
+  BorderColor<<faq>> #00838F
+  FontColor<<faq>> #006064
+  BackgroundColor<<feedback>> #FCE4EC
+  BorderColor<<feedback>> #AD1457
+  FontColor<<feedback>> #880E4F
+  BackgroundColor<<ai>> #FFF9C4
+  BorderColor<<ai>> #F9A825
+  FontColor<<ai>> #F57F17
+}
+
+skinparam package {
+  BackgroundColor #FAFAFA
+  BorderColor #90A4AE
+  FontColor #37474F
+  FontSize 13
+  FontStyle bold
+  Style rectangle
+}
+
+skinparam actor {
+  FontSize 14
+  FontStyle bold
+}
+
+skinparam arrow {
+  Color #546E7A
+  FontSize 10
+}
+
+left to right direction
+
+' ============================================================
+' Actor
+' ============================================================
+actor "Admin" as A #FFCDD2
+
+' ============================================================
+' System Boundary
+' ============================================================
+rectangle "Parkisense — Admin Panel" {
+
+
+
+
+
+
+  ' ── Article Management ──
+  package "Article Management" #E8F5E9 {
+    usecase "View Dashboard" as UC_Dashboard 
+    usecase "View All Patients" as UC_Patients 
+    usecase "View Tests Results" as UC_TestResults 
+    usecase "Manage Articles" as UC_Articles 
+    usecase "Manage Faqs" as UC_Faqs
+    usecase "View Feedbacks" as UC_Feedbacks
+    usecase "Logout" as UC_Logout 
+    usecase "Add Articles" as UC_Add_Articles 
+    usecase "Edit Articles" as UC_Edit_Articles
+    usecase "Delete Articles" as UC_Delete_Articles
+    usecase "Add Faqs" as UC_Add_Faqs
+    usecase "Edit Faqs" as UC_Edit_Faqs
+    usecase "Delete Faqs" as UC_Delete_Faqs
+  }
+
+ 
+
+ 
+
+  
+
+' ============================================================
+' Admin Associations
+' ============================================================
+A --> UC_Dashboard
+A --> UC_Patients
+A --> UC_TestResults
+A --> UC_Articles
+A --> UC_Faqs
+A --> UC_Feedbacks
+A --> UC_Logout 
+  
+' ============================================================
+' <<include>> Relationships
+' ============================================================
+
+
+' ============================================================
+' <<extend>> Relationships
+' ============================================================
+UC_Patients ..> UC_Dashboard : <<extends>>
+UC_TestResults ..> UC_Dashboard : <<extends>>
+
+UC_Add_Articles ..> UC_Articles : <<extends>>
+UC_Edit_Articles ..> UC_Articles : <<extends>>
+UC_Delete_Articles ..> UC_Articles : <<extends>>
+
+UC_Add_Faqs ..> UC_Faqs : <<extends>>
+UC_Edit_Faqs ..> UC_Faqs : <<extends>>
+UC_Delete_Faqs ..> UC_Faqs : <<extends>>
+
+' ============================================================
+' Legend
+' ============================================================
+legend bottom right
+  |= Color |= Package |
+  |<#F3E5F5> | Authentication |
+  |<#E8EAF6> | Admin Dashboard |
+  |<#E3F2FD> | Patient Management |
+  |<#FFF3E0> | Test Management |
+  |<#E8F5E9> | Article Management |
+  |<#E0F7FA> | FAQ Management |
+  |<#FCE4EC> | Feedback Management |
+  |<#FFF9C4> | AI Monitoring |
+  --
+  **··>** <<include>> = Mandatory sub-flow
+  **··>** <<extend>> = Optional sub-flow
+endlegend
+
+@enduml

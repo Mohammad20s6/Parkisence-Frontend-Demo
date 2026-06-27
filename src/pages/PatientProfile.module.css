@@ -1,0 +1,172 @@
+.back {
+  margin-inline-start: -70px;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+/*  form  */
+.card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 8px 30px rgba(30, 50, 50, 0.35);
+}
+
+.card .header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  /* padding-bottom: 24px; */
+  border-bottom: 1px solid var(--text-secondary);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  /* background: linear-gradient(135deg, var(--primary), var(--primary)); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.username {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.email {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+.message {
+  color: var(--text-primary);
+  background-color: var(--border);
+  border: 2px solid var(--primary);
+  padding: 8px 16px;
+  margin-top: 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.field input,
+.field select {
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.field input:disabled,
+.field select:disabled {
+  background: var(--bg-card);
+  cursor: not-allowed;
+}
+
+.hint {
+  font-size: 12px;
+  color: #ef4444;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.primary {
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--primary);
+  color: var(--bg-card);
+  transition: background 0.3s;
+}
+
+.primary:hover {
+  background: var(--primary-hover);
+}
+
+.cancel {
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  background: var(--bg-primary);
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.cancel:hover {
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  cursor: pointer;
+}

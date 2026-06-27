@@ -1,0 +1,29 @@
+.btn {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  margin-inline-start: 25%;
+  margin-inline-end: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--badge-border);
+
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+.btn:hover {
+  background-color: var(--bg-card);
+  border: 1px solid var(--text-secondary);
+  cursor: pointer;
+}
+
+[dir="rtl"] .btn svg {
+  transform: scaleX(-1);
+}

@@ -1,0 +1,119 @@
+@startuml Voice_Test_Styled
+
+title Parkisense — Voice Test Workflow
+caption AI-Based Parkinson Voice Analysis
+
+' =========================
+' Global Style
+' =========================
+skinparam shadowing true
+skinparam roundcorner 18
+skinparam backgroundColor #FAFAFA
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+
+skinparam title {
+  FontSize 18
+  FontStyle bold
+  FontColor #E65100
+}
+
+skinparam activity {
+  BackgroundColor #FFF3E0
+  BorderColor #E65100
+  FontColor #BF360C
+  ArrowColor #6D4C41
+  BarColor #6D4C41
+  StartColor #2E7D32
+  EndColor #C62828
+  DiamondBackgroundColor #FFE0B2
+  DiamondBorderColor #E65100
+}
+
+skinparam partition {
+  BorderColor #FB8C00
+  BackgroundColor #FFF8E1
+  FontColor #E65100
+  FontStyle bold
+  RoundCorner 25
+  BorderThickness 2
+}
+
+partition "Voice Test Workflow" {
+
+start
+
+repeat
+
+:Access Dashboard;
+:Select Voice Test;
+
+if (Choose Input Method?) then (Record Audio)
+
+  :Record Voice for 4 Seconds;
+
+else (Upload Audio)
+
+  :Select & Upload Audio File;
+
+  if (Audio File Valid?) then (Yes)
+
+  else (No)
+
+    :Display Invalid File Error;
+
+  endif
+
+endif
+
+:Preview Audio Playback;
+
+repeat while (Reset Test?) is (Yes)
+-> No;
+
+:Submit Voice Sample;
+
+if (Cancel Request?) then (Yes)
+
+  :Cancel AI Request;
+  :Return to Voice Test;
+
+  stop
+
+else (No)
+
+endif
+
+:AI Model Processes Voice Features;
+
+if (Analysis Successful?) then (Yes)
+
+  :Generate Test Result;
+  :Save Result in Patient History;
+  :Display Test Result;
+
+  if (Download PDF Report?) then (Yes)
+
+    :Generate PDF Report;
+    :Download PDF Report;
+
+  else (No)
+
+  endif
+
+  :Return to Dashboard;
+
+  stop
+
+else (No)
+
+  :Display Analysis Error;
+  :Return to Voice Test;
+
+  stop
+
+endif
+
+}
+
+@enduml

@@ -1,0 +1,202 @@
+@startuml Parkisense_Voice_Test_Sequence
+
+title Parkisense — Voice Test Workflow\nUML Sequence Diagram | Parkinson's Disease Detection Platform
+caption AI-Powered Voice Biomarker Analysis — Graduation Project Documentation
+
+skinparam shadowing true
+skinparam roundcorner 15
+skinparam handwritten false
+skinparam backgroundColor #F8FBFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 10
+
+skinparam title {
+  FontSize 16
+  FontStyle bold
+  FontColor #0D47A1
+}
+
+skinparam caption {
+  FontColor #546E7A
+  FontSize 10
+}
+
+skinparam actor {
+  BackgroundColor #C8E6C9
+  BorderColor #2E7D32
+  FontColor #1B5E20
+  FontSize 11
+  FontStyle bold
+}
+
+skinparam participant {
+  BackgroundColor #E3F2FD
+  BorderColor #1565C0
+  FontColor #0D47A1
+  FontSize 10
+  FontStyle bold
+}
+
+skinparam sequence {
+  ArrowColor #1976D2
+  LifeLineBorderColor #90CAF9
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #1565C0
+  ParticipantBackgroundColor #E3F2FD
+  ActorBorderColor #2E7D32
+  ActorBackgroundColor #C8E6C9
+  DividerBackgroundColor #BBDEFB
+  DividerBorderColor #1565C0
+  GroupBorderColor #1565C0
+  GroupHeaderFontColor #0D47A1
+  GroupHeaderBackgroundColor #BBDEFB
+  GroupBodyBackgroundColor #F5F9FF
+}
+
+' ============================================================
+' Participants
+' ============================================================
+actor Patient
+participant "User Interface" as UI
+participant "Controller" as Ctrl
+database "DB" as DB
+participant "AI Model" as AIModel
+
+' ============================================================
+' Authentication (JWT)
+' ============================================================
+
+== Login ==
+
+Patient -> UI : Submit login credentials
+activate UI
+
+UI -> Ctrl : POST /login(credentials)
+activate Ctrl
+
+Ctrl -> Ctrl : Validate credentials
+
+alt Login failed
+
+  Ctrl --> UI : 401 Unauthorized
+  deactivate Ctrl
+  UI --> Patient : Show error message
+  deactivate UI
+
+else Login successful
+
+  Ctrl -> Ctrl : Generate JWT token
+  Ctrl --> UI : JWT token
+  deactivate Ctrl
+
+  UI -> UI : Store JWT token
+  UI --> Patient : Redirect to dashboard
+
+  ' ============================================================
+  ' Voice Test
+  ' ============================================================
+
+  == Voice Test ==
+
+  Patient -> UI : Select Voice Test
+  UI --> Patient : Show recording instructions
+
+  loop Until audio is submitted
+
+    alt Record voice
+
+      Patient -> UI : Record voice sample
+      UI -> UI : Capture audio
+
+    else Upload audio file
+
+      Patient -> UI : Upload audio file
+
+    end
+
+    UI --> Patient : Preview audio
+
+    alt Reset
+
+      Patient -> UI : Reset
+      UI --> Patient : Clear audio
+
+    else Submit
+
+      Patient -> UI : Submit voice sample
+      UI -> Ctrl : POST /voice-test\n(Authorization: Bearer JWT, audio)
+      activate Ctrl
+
+      Ctrl -> Ctrl : Validate JWT token
+
+      alt Unauthorized
+
+        Ctrl --> UI : 403 Forbidden
+        deactivate Ctrl
+        UI --> Patient : Redirect to login
+
+      else Authorized
+
+        Ctrl -> Ctrl : Validate & preprocess audio
+
+        alt Invalid audio
+
+          Ctrl --> UI : Validation error
+          deactivate Ctrl
+          UI --> Patient : Display error message
+
+        else Valid audio
+
+          Ctrl -> AIModel : Analyze voice sample
+          activate AIModel
+
+          alt Analysis successful
+
+            AIModel --> Ctrl : Prediction result
+            deactivate AIModel
+
+            Ctrl -> DB : Save test result
+            activate DB
+            DB --> Ctrl : Confirmed
+            deactivate DB
+
+            Ctrl --> UI : test result
+            deactivate Ctrl
+
+            UI --> Patient : Display result
+
+            opt Download PDF report
+
+              Patient -> UI : Download PDF File
+              UI -> Ctrl : GET /report\n(Authorization: Bearer JWT)
+              activate Ctrl
+              Ctrl -> Ctrl : Generate PDF report
+              Ctrl --> UI : PDF file
+              deactivate Ctrl
+              UI --> Patient : Download PDF
+
+            end
+
+          else Analysis failed
+
+            AIModel --> Ctrl : Analysis error
+            deactivate AIModel
+            Ctrl --> UI : Error response
+            deactivate Ctrl
+            UI --> Patient : Display analysis error
+
+          end
+
+        end
+
+      end
+
+    end
+
+  end
+
+  deactivate UI
+
+end
+
+@enduml

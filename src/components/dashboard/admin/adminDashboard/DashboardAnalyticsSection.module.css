@@ -1,0 +1,223 @@
+.section {
+  /* width: 80%; */
+  /* padding: 32px 64px; */
+  padding-inline-end: 32px;
+  background: var(--bg-primary);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .section {
+    padding-inline-end: 0px;
+  }
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 16px 32px;
+  border: 1px solid var(--border);
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+/* =========================
+   LIST
+========================= */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* =========================
+   ROW
+========================= */
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* =========================
+   ICONS
+========================= */
+
+.iconAccent,
+.iconPrimary,
+.iconPurple,
+.iconSuccess,
+.iconWarning,
+.iconDanger {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* accent */
+
+.iconAccent {
+  background: var(--health);
+  color: var(--text-primary);
+}
+
+/* primary */
+
+.iconPrimary {
+  background: var(--info);
+  color: var(--text-primary);
+}
+
+/* purple */
+
+.iconPurple {
+  background: rgba(168, 85, 247, 0.15);
+  color: var(--text-primary);
+}
+
+/* success */
+
+.iconSuccess {
+  color: var(--health);
+  background: var(--health-soft);
+}
+
+/* warning */
+
+.iconWarning {
+  color: var(--moderate);
+  background: var(--moderate-bg);
+}
+
+/* danger */
+
+.iconDanger {
+  color: var(--high);
+  background: var(--high-bg);
+}
+
+/* =========================
+   PROGRESS BLOCK
+========================= */
+
+.progressBlock {
+  flex: 1;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+
+  font-size: 13px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* =========================
+   MONTH STATS
+========================= */
+
+.monthStats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.monthItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--bg-secondary);
+  border-radius: 14px;
+
+  padding: 16px 18px;
+}
+
+/* =========================
+   LABEL
+========================= */
+
+.label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+/* =========================
+   VALUE
+========================= */
+
+.monthValue {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* =========================
+   BIG ICONS
+========================= */
+
+.iconPrimaryLarge,
+.iconAccentLarge {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconPrimaryLarge {
+  background: var(--info);
+  color: var(--info-bg);
+}
+
+.iconAccentLarge {
+  background: var(--low-bg);
+  color: var(--low);
+}
