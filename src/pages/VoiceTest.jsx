@@ -15,7 +15,7 @@ import Loading from "../components/ui/Loading";
 import BackButton from "../components/ui/BackButton";
 import { useTranslation } from "react-i18next";
 import { usePatientDashboard } from "../contexts/PatientDashboardContext";
-
+import testService from "../api/testService";
 /* ============================= */
 /* ====== WAV ENCODING ========= */
 /* ============================= */
@@ -319,84 +319,25 @@ function VoiceTest() {
     if (!state.audioBlob) return;
 
     dispatch({ type: "SUBMIT_START" });
-    abortControllerRef.current = new AbortController();
 
     try {
-      const formData = new FormData();
-      formData.append(
-        "voiceFile",
-        state.audioBlob,
-        `recording-${Date.now()}.wav`,
-      );
+      const response = await testService.submitVoiceTest(state.audioBlob);
 
-      const token = localStorage.getItem("token");
-
-      const res = await fetch("http://127.0.0.1:3000/api/tests/voice", {
-        method: "POST",
-        headers: {
-          ...(token && { Authorization: `Bearer ${token}` }),
-        },
-        body: formData,
-        signal: abortControllerRef.current.signal,
+      dispatch({
+        type: "SUBMIT_SUCCESS",
+        payload: response.data.test,
       });
-
-      const responseData = await res.json();
-
-      if (!res.ok)
-        throw new Error(responseData.message || t("voiceTest.failedAnalyze"));
-
-      console.log(
-        "%c ======= [Voice Test API Success] =======",
-        "color: #14b8a6; font-weight: bold; font-size: 14px;",
-      );
-      console.log("الاستجابة الكاملة من السيرفر (responseData):", responseData);
-      console.log(
-        "رقم التأكيد (Confidence):",
-        responseData?.data?.test?.confidence,
-      );
-      console.log(
-        "النتيجة التشخيصية (Result):",
-        responseData?.data?.test?.result,
-      );
-      console.log("FULL RESPONSE");
-      console.log(responseData);
-      console.log("معرف الفحص (Test ID):", responseData?.data?.test?._id);
-      console.log(
-        "%c ========================================",
-        "color: #14b8a6; font-weight: bold; font-size: 14px;",
-      );
-
-      dispatch({ type: "SUBMIT_SUCCESS", payload: responseData.data.test });
-      const createdTestId = responseData?.data?.test?._id;
 
       await refreshDashboard();
 
-      if (createdTestId) {
-        // نمرر حالة التكرار والرسالة عبر الـ state
-        navigate(`/patient/history/${createdTestId}`, {
-          state: {
-            isDuplicate:
-              responseData.isDuplicate ||
-              responseData.message?.includes("already") ||
-              false,
-            duplicateMessage: responseData.message,
-          },
-        });
-      } else {
-        navigate("/patient/history");
-      }
-      // if (createdTestId) {
-      //   navigate(`/patient/history/${createdTestId}`);
-      // } else {
-      //   navigate("/patient/history");
-      // }
+      navigate(`/patient/history/${response.data.test._id}`, {
+        state: {
+          isDuplicate: false,
+          duplicateMessage: null,
+        },
+      });
     } catch (error) {
-      if (error.name === "AbortError") {
-        dispatch({ type: "SUBMIT_CANCEL" });
-        return;
-      }
-
-      console.error("خطأ أثناء إرسال أو تحليل ملف الصوت:", error);
+      console.error("Voice test error:", error);
 
       dispatch({
         type: "SUBMIT_ERROR",
@@ -406,10 +347,10 @@ function VoiceTest() {
   };
 
   const handleCancel = () => {
-    abortControllerRef.current?.abort();
-    dispatch({ type: "SUBMIT_CANCEL" });
+    dispatch({
+      type: "SUBMIT_CANCEL",
+    });
   };
-
   useEffect(() => {
     return () => {
       cleanupAudio();
@@ -426,7 +367,6 @@ function VoiceTest() {
       ? state.lastDuration
       : 0;
   const canStop = state.countdown >= 3.0;
-
   return (
     <>
       <BackButton />

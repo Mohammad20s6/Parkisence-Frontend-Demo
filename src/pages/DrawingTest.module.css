@@ -388,51 +388,607 @@
     stroke-dashoffset: 0;
   }
 }
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
-/* ============================= */
-/* ========= RESPONSIVE ======== */
-/* ============================= */
-
-@media (max-width: 1080px) {
+@media (max-width: 1200px) {
   .layout {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .leftSection,
+  .rightSection {
+    width: 100%;
   }
 
   .canvasWrapper {
-    min-height: 620px;
+    max-width: 720px;
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 992px) {
   .container {
-    padding-inline: 12px;
+    padding: 12px;
   }
 
   .card {
-    padding: 16px;
+    padding: 22px;
+    border-radius: 18px;
   }
 
-  .layout {
-    grid-template-columns: 1fr;
+  .title {
+    font-size: 22px;
   }
 
-  .patternSwitcher {
-    flex-direction: column;
+  .description {
+    margin-bottom: 20px;
   }
 
-  .actions {
-    flex-direction: column;
+  .instructions {
+    margin-bottom: 20px;
+  }
+
+  .guideSection {
+    margin-top: 20px;
   }
 
   .canvasWrapper {
-    min-height: 420px;
+    max-width: 620px;
   }
 
   .preview {
-    height: 280px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .layout {
+    gap: 20px;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 18px;
   }
 
   .title {
     font-size: 20px;
+    text-align: center;
+  }
+
+  .description {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  .instructions {
+    padding: 16px;
+  }
+
+  .instructionsTitle {
+    margin-inline-start: 0;
+    padding-inline-start: 0;
+    justify-content: center;
+    text-align: center;
+    font-size: 17px;
+  }
+
+  .instructions li {
+    line-height: 1.7;
+  }
+
+  .guideSection {
+    padding: 18px;
+  }
+
+  .drawHeader {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .drawHeader h3 {
+    font-size: 17px;
+  }
+
+  .drawHeader p {
+    font-size: 13px;
+  }
+
+  .patternSwitcher {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .patternBtn {
+    width: 100%;
+    height: 54px;
+    font-size: 15px;
+  }
+
+  .canvasWrapper {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 18px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .uploadBtn,
+  .resetBtn {
+    width: 100%;
+    height: 54px;
+    font-size: 15px;
+  }
+
+  .submitButton {
+    height: 56px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  .preview {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+  }
+
+  .card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .pageHeader {
+    padding-inline-start: 0;
+    margin-bottom: 8px;
+  }
+
+  .title {
+    font-size: 19px;
+  }
+
+  .description {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .instructions {
+    padding: 14px;
+  }
+
+  .instructionsTitle {
+    font-size: 16px;
+  }
+
+  .instructions li {
+    font-size: 13px;
+  }
+
+  .guideSection {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .guideHeader {
+    text-align: center;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .spiralSvg,
+  .waveSvg {
+    max-width: 190px;
+  }
+
+  .drawHeader {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .drawHeader h3 {
+    font-size: 16px;
+  }
+
+  .drawHeader p {
+    font-size: 12px;
+  }
+
+  .patternBtn {
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .canvasWrapper {
+    border-radius: 16px;
+  }
+
+  .uploadBtn,
+  .resetBtn {
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .submitButton {
+    height: 52px;
+    font-size: 14px;
+  }
+
+  .preview {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 6px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .instructions {
+    padding: 12px;
+  }
+
+  .instructionsTitle {
+    font-size: 15px;
+  }
+
+  .instructions li {
+    font-size: 12px;
+  }
+
+  .patternBtn {
+    height: 48px;
+    font-size: 13px;
+  }
+
+  .uploadBtn,
+  .resetBtn,
+  .submitButton {
+    height: 48px;
+    font-size: 13px;
+  }
+
+  .spiralSvg,
+  .waveSvg {
+    max-width: 170px;
+  }
+}
+/* ============================= */
+/* ========= ACTIONS =========== */
+/* ============================= */
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.resetBtn,
+.uploadBtn {
+  width: 100%;
+  min-height: 56px;
+  padding: 0 18px;
+
+  border-radius: 16px;
+  border: 1px solid var(--border);
+
+  background: var(--bg-card);
+  color: var(--text-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.uploadBtn {
+  border: 2px dashed var(--primary);
+  color: var(--primary);
+}
+
+.uploadBtn svg,
+.resetBtn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.uploadBtn:hover {
+  background: rgba(20, 184, 166, 0.08);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(20, 184, 166, 0.18);
+}
+
+.resetBtn:hover {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: var(--high);
+  color: var(--high);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(239, 68, 68, 0.16);
+}
+
+.uploadBtn:active,
+.resetBtn:active {
+  transform: scale(0.98);
+}
+
+.uploadBtn:disabled,
+.resetBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ============================= */
+/* ========= SUBMIT ============ */
+/* ============================= */
+
+.submitButton {
+  width: 100%;
+  min-height: 58px;
+
+  margin-top: 8px;
+
+  border: none;
+  border-radius: 16px;
+
+  background: var(--primary);
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+
+  box-shadow: 0 10px 28px rgba(20, 184, 166, 0.28);
+
+  opacity: 0.45;
+}
+
+.submitActive {
+  opacity: 1;
+}
+
+.submitActive:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(20, 184, 166, 0.35);
+}
+
+.submitButton:active {
+  transform: scale(0.985);
+}
+
+.submitButton:disabled {
+  cursor: not-allowed;
+}
+
+/* ============================= */
+/* ======== MOBILE ============= */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .actions {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .uploadBtn,
+  .resetBtn {
+    min-height: 58px;
+    border-radius: 15px;
+    font-size: 15px;
+  }
+
+  .submitButton {
+    min-height: 60px;
+    border-radius: 15px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .uploadBtn,
+  .resetBtn {
+    min-height: 56px;
+    padding: 0 16px;
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .uploadBtn svg,
+  .resetBtn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .submitButton {
+    min-height: 58px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .uploadBtn,
+  .resetBtn,
+  .submitButton {
+    min-height: 52px;
+    border-radius: 14px;
+    font-size: 13px;
+  }
+}
+/* ============================= */
+/* ===== PATTERN SWITCHER ====== */
+/* ============================= */
+
+.patternSwitcher {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.patternBtn {
+  width: 100%;
+  min-height: 56px;
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border-radius: 16px;
+  border: 1px solid var(--border);
+
+  background: var(--bg-card);
+  color: var(--text-primary);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.patternBtn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.patternBtn:hover:not(:disabled) {
+  background: rgba(20, 184, 166, 0.08);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(20, 184, 166, 0.18);
+}
+
+.patternBtn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* الزر المحدد */
+
+.activePattern {
+  background: linear-gradient(135deg, var(--primary), #14b8a6);
+
+  color: #fff;
+  border-color: transparent;
+
+  box-shadow:
+    0 12px 28px rgba(20, 184, 166, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.activePattern svg {
+  color: #fff;
+}
+
+.activePattern:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ============================= */
+/* ========= MOBILE ============ */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .patternSwitcher {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .patternBtn {
+    min-height: 58px;
+    font-size: 15px;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .patternBtn {
+    min-height: 56px;
+    font-size: 14px;
+    gap: 8px;
+    padding: 0 16px;
+  }
+
+  .patternBtn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .patternBtn {
+    min-height: 52px;
+    border-radius: 14px;
+    font-size: 13px;
   }
 }

@@ -15,7 +15,7 @@ import ErrorAlert from "../components/ui/ErrorAlert";
 import BackButton from "../components/ui/BackButton";
 import { useTranslation } from "react-i18next";
 import { usePatientDashboard } from "../contexts/PatientDashboardContext";
-
+import testService from "../api/testService";
 /* ============================= */
 /* ========= REDUCER =========== */
 /* ============================= */
@@ -443,57 +443,37 @@ function DrawingTest() {
     if (state.points.length === 0 && !state.image) return;
 
     dispatch({ type: "SUBMIT_START" });
+
     abortControllerRef.current = new AbortController();
 
     try {
-      const token = localStorage.getItem("token");
-      if (!token) throw new Error("Unauthorized");
+      let imageFile = state.image;
 
-      const formData = new FormData();
-
-      if (state.image) {
-        formData.append("imageFile", state.image);
-      } else {
-        const canvasFile = await canvasToFile();
-        formData.append("imageFile", canvasFile);
+      if (!imageFile) {
+        imageFile = await canvasToFile();
       }
 
-      formData.append("activePattern", state.activePattern);
-
-      const response = await fetch("http://127.0.0.1:3000/api/tests/drawing", {
-        method: "POST",
-        headers: { Authorization: `Bearer ${token}` },
-        body: formData,
-        signal: abortControllerRef.current.signal,
-      });
-
-      const result = await response.json();
-      if (!response.ok)
-        throw new Error(result.message || t("drawingTest.failedAnalyze"));
+      const result = await testService.submitDrawingTest(
+        state.activePattern,
+        imageFile,
+      );
 
       dispatch({ type: "SUBMIT_SUCCESS" });
-      const createdTestId = result?.data?.test?._id;
+
       await refreshDashboard();
 
-      if (createdTestId) {
-        // تمرير حالة التكرار عبر الـ state لتستقبلها صفحة النتائج
-        navigate(`/patient/history/${createdTestId}`, {
-          state: {
-            isDuplicate:
-              result.isDuplicate ||
-              result.message?.includes("already") ||
-              false,
-            duplicateMessage: result.message,
-          },
-        });
-      } else {
-        navigate("/patient/history");
-      }
+      navigate(`/patient/history/${result.data.test._id}`, {
+        state: {
+          isDuplicate: result.isDuplicate,
+          duplicateMessage: result.message,
+        },
+      });
     } catch (err) {
       if (err.name === "AbortError") {
         dispatch({ type: "SUBMIT_CANCEL" });
         return;
       }
+
       dispatch({
         type: "SUBMIT_ERROR",
         payload: err.message || t("drawingTest.failedAnalyze"),

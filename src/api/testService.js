@@ -171,8 +171,8 @@ const testService = {
     const patientId = getPatientId(); // تم الإصلاح هنا
     const tests = getTests();
 
-    const randomConfidence = Math.floor(Math.random() * 25) + 75;
-    const result = randomConfidence >= 85 ? "Healthy" : "Parkinson";
+    const randomConfidence = Math.floor(Math.random() * 101);
+    const result = randomConfidence >= 50 ? "Healthy" : "Parkinson";
     const adviceObj = getAdvice("voice", result); // استدعاء دالة النصيحة المعدلة
 
     const newTest = {
@@ -212,8 +212,8 @@ const testService = {
     const patientId = getPatientId(); // تم الإصلاح هنا
     const tests = getTests();
 
-    const randomConfidence = Math.floor(Math.random() * 25) + 75;
-    const result = randomConfidence >= 85 ? "Healthy" : "Parkinson";
+    const randomConfidence = Math.floor(Math.random() * 101);
+    const result = randomConfidence >= 50 ? "Healthy" : "Parkinson";
     const adviceObj = getAdvice("drawing", result); // استدعاء دالة النصيحة المعدلة
 
     const newTest = {

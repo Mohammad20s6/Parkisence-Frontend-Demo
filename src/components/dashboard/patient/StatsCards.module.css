@@ -126,3 +126,31 @@
 
   color: #a855f7;
 }
+
+/* تحسين الهاتف فقط */
+
+@media (max-width: 639px) {
+  .card {
+    max-width: 90%;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .content {
+    justify-content: space-between;
+  }
+
+  .iconBox {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  .value {
+    font-size: 17px;
+  }
+
+  .label {
+    font-size: 11px;
+  }
+}

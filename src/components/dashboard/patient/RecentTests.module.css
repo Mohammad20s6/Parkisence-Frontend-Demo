@@ -46,3 +46,43 @@
 .viewAll:hover .arrow {
   transform: translateX(4px);
 }
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 768px) {
+  .header {
+    gap: 14px;
+  }
+
+  .title {
+    font-size: 17px;
+  }
+
+  .viewAll {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 520px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .viewAll {
+    width: 100%;
+    justify-content: center;
+  }
+}

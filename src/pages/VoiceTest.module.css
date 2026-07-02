@@ -1,41 +1,50 @@
+/* ===================================================
+   BASE STYLES (Desktop First)
+=================================================== */
 .error {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .container {
-  padding: 8px 16px 40px 16px;
+  padding: 40px 20px;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 80px);
 }
 
 .card {
   width: 100%;
-  max-width: 520px;
+  max-width: 650px; /* زيادة العرض على الشاشات الكبيرة لراحة بصرية أكبر */
   background: var(--bg-primary);
-  border-radius: 16px;
+  border-radius: 24px;
   border: 1px solid var(--border);
-  padding: 24px 32px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+  transition:
+    padding 0.3s ease,
+    border-radius 0.3s ease;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .description {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-secondary);
-  margin-bottom: 24px;
-  margin-top: 2px;
+  margin-bottom: 32px;
+  line-height: 1.6;
 }
 
+/* Instructions Section */
 .instructions {
   background: var(--bg-card);
-  padding: 16px;
-  border-radius: 12px;
+  padding: 24px;
+  border-radius: 16px;
   border: 1px solid var(--border);
   margin-bottom: 32px;
 }
@@ -43,115 +52,120 @@
 .instractionsTitle {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 8px;
-  padding-inline-start: 0px;
-  margin-inline-start: -16px;
+  margin-bottom: 16px;
   color: var(--health);
   display: flex;
-  gap: 6px;
+  gap: 8px;
   align-items: center;
-  justify-content: start;
 }
 
 .instructions ul {
-  padding-inline-start: 18px;
+  padding-inline-start: 24px;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .instructions li {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-primary);
-  margin-bottom: 6px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
+/* Test Word Section */
 .testWordWrapper {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .testWord {
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 56px;
+  font-weight: 800;
   letter-spacing: 2px;
   color: var(--primary);
-  margin: 4px 8px;
+  margin: 8px 0;
 }
 
 .durationHint {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-secondary);
-  margin-top: 8px;
   font-weight: 500;
 }
 
-/* Audio Example & Result Section */
+/* Example & Audio Player Section */
 .exampleSection {
-  margin-bottom: 32px;
-  margin-top: 16px;
-  padding: 16px;
-  border-radius: 12px;
+  margin: 24px 0 32px 0;
+  padding: 20px;
+  border-radius: 16px;
   border: 1px solid var(--border);
   background: var(--bg-card);
 }
 
 .exampleHeader {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .exampleTitle {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--text-primary);
 }
 
 .audioPlayer {
   width: 100%;
-  max-width: 320px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
 .audioPlayer audio {
   width: 100%;
-  height: 40px;
+  height: 48px;
   outline: none;
+  border-radius: 24px;
 }
 
-/* Recorder Section */
+/* Recorder Button Section */
 .recorderSection {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 16px 0 32px 0;
 }
 
 .recordButton {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   border: none;
-  margin: 8px auto 24px auto;
   background: var(--primary);
   color: var(--bg-primary);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 15px rgba(20, 184, 166, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(20, 184, 166, 0.3);
+}
+
+.recordButton svg {
+  width: 40px;
+  height: 40px;
 }
 
 .recordButton:hover:not(:disabled) {
   transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(20, 184, 166, 0.4);
 }
 
 .recording {
   background: var(--high);
   position: relative;
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
 }
 
 .disabledStop {
@@ -164,24 +178,24 @@
 .recording::after {
   content: "";
   position: absolute;
-  width: 140px;
-  height: 140px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
   background: var(--high);
   opacity: 0.2;
-  animation: pulse 1s infinite;
+  animation: pulse 1.2s infinite ease-out;
   pointer-events: none;
 }
 
-/* Meter Bar for Live Audio Volume */
+/* Meter Bar */
 .meterContainer {
   width: 100%;
-  max-width: 200px;
-  height: 6px;
+  max-width: 260px;
+  height: 8px;
   background: var(--border);
   border-radius: 999px;
   overflow: hidden;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .meterBar {
@@ -197,7 +211,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .complateMessage {
@@ -205,33 +219,35 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-}
-
-.complateIcon {
+  background: rgba(20, 184, 166, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
   color: var(--health);
+  font-weight: 600;
 }
 
 .countdown {
   color: var(--high);
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
 }
 
 .recordingText {
   color: var(--text-primary);
-  margin-top: 6px;
-  font-size: 14px;
+  margin-top: 12px;
+  font-size: 15px;
   font-weight: 500;
 }
 
 @keyframes pulse {
   0% {
     transform: scale(1);
-    opacity: 0.4;
+    opacity: 0.5;
   }
   100% {
-    transform: scale(1.4);
+    transform: scale(1.5);
     opacity: 0;
   }
 }
@@ -240,8 +256,8 @@
 .orWrapper {
   display: flex;
   align-items: center;
-  margin: 30px 0;
-  gap: 10px;
+  margin: 32px 0;
+  gap: 16px;
 }
 
 .orLine {
@@ -252,38 +268,40 @@
 
 .orText {
   font-size: 14px;
+  font-weight: 600;
   color: var(--text-secondary);
-  padding: 0 10px;
 }
 
 /* Upload Section */
-/* Upload Section - تم التحديث ليدعم العرض الأفقي المتناسق */
 .uploadSection {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   display: flex;
-  gap: 12px; /* مسافة فاصلة بين الزرين */
+  gap: 16px;
 }
 
 .hiddenInput {
   display: none;
 }
 
-/* تعديل عرض زر الرفع ليتشارك المساحة بالتساوي مع زر الإعادة */
-.uploadButton {
+.uploadButton,
+.resetBtn {
   flex: 1;
-  height: 60px;
-  border: 2px dashed var(--text-secondary);
-  color: var(--text-primary);
-  background: var(--bg-card);
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 500;
+  height: 64px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.uploadButton {
+  border: 2px dashed var(--text-secondary);
+  color: var(--text-primary);
+  background: var(--bg-card);
 }
 
 .uploadButton:hover {
@@ -292,41 +310,28 @@
   border-color: var(--primary);
 }
 
-/* 👈 زر إعادة الضبط الجديد بالتناسق الكامل مع هوية واجهاتك */
 .resetBtn {
-  flex: 1;
-  height: 60px;
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   color: var(--text-secondary);
   background: var(--bg-card);
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .resetBtn:hover {
   background-color: var(--bg-primary);
-  color: var(
-    --high
-  ); /* يضيء باللون الأحمر الدلالي المتوفر بمتغيراتك عند تمرير الماوس */
+  color: var(--high);
   border-color: var(--high);
 }
+
 /* Submit Button */
 .submitButton {
   width: 100%;
-  height: 50px;
-  border-radius: 12px;
+  height: 64px;
+  border-radius: 14px;
   border: none;
   background: var(--primary);
   color: var(--bg-primary);
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   opacity: 0.5;
   display: flex;
   align-items: center;
@@ -341,21 +346,146 @@
 
 .submitActive:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(20, 184, 166, 0.2);
+  box-shadow: 0 8px 20px rgba(20, 184, 166, 0.25);
 }
 
-/* Responsive Styles */
-@media (max-width: 480px) {
+/* ===================================================
+   RESPONSIVE QUERIES (شاشات أصغر من 768px - تابلت)
+=================================================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 32px 16px;
+  }
+
   .card {
-    padding: 20px 16px;
+    padding: 32px;
+  }
+
+  .title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .description {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .testWord {
+    font-size: 48px;
+  }
+}
+
+/* ===================================================
+   RESPONSIVE QUERIES (شاشات أصغر من 480px - هواتف ذكية)
+=================================================== */
+@media (max-width: 480px) {
+  .container {
+    /* تقليل الهوامش الخارجية بشدة لكي يتسع الكرت */
+    padding: 16px 8px 32px 8px;
+  }
+
+  .card {
+    /* تقليل الهوامش الداخلية ليأخذ المحتوى مساحة أكبر */
+    padding: 24px 16px;
+    border-radius: 16px;
+    border: none; /* إزالة الحدود تعطي اتساع بصري على الجوال */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* ظل أوضح لتعويض غياب الحدود */
   }
 
   .title {
     font-size: 22px;
   }
 
+  .instructions {
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+
+  .instractionsTitle {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .instructions ul {
+    padding-inline-start: 16px; /* تصغير الهامش الجانبي للقائمة */
+  }
+
+  .instructions li {
+    font-size: 14px;
+  }
+
   .testWord {
     font-size: 40px;
+    margin: 4px 0;
+  }
+
+  .durationHint {
+    font-size: 13px;
+  }
+
+  .exampleSection {
+    padding: 16px;
+  }
+
+  /* تصغير زر التسجيل الدائري ليتناسب مع الجوال */
+  .recordButton {
+    width: 90px;
+    height: 90px;
+  }
+
+  .recordButton svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .recording::after {
+    width: 130px;
+    height: 130px;
+  }
+
+  .countdown {
+    font-size: 28px;
+  }
+
+  .orWrapper {
+    margin: 24px 0;
+  }
+
+  /* تكديس أزرار الرفع وإعادة الضبط عمودياً لتكون 100% عرض ويسهل النقر عليها */
+  .uploadSection {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .uploadButton,
+  .resetBtn {
+    width: 100%;
+    height: 56px;
+    font-size: 14px;
+  }
+
+  .submitButton {
+    height: 56px;
+    font-size: 15px;
+  }
+}
+
+/* ===================================================
+   RESPONSIVE QUERIES (شاشات صغيرة جداً أصغر من 360px - مثل iPhone SE)
+=================================================== */
+@media (max-width: 360px) {
+  .container {
+    padding: 12px 6px;
+  }
+
+  .card {
+    padding: 20px 12px;
+  }
+
+  .testWord {
+    font-size: 32px;
   }
 
   .recordButton {
