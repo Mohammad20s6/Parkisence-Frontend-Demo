@@ -369,10 +369,13 @@ function VoiceTest() {
   const canStop = state.countdown >= 3.0;
   return (
     <>
-      <BackButton />
       {state.isSubmitting && <Loading onHandelCancel={handleCancel} />}
 
+      <div className={styles.pageHeader}>
+        <BackButton />
+      </div>
       <div className={styles.container}>
+        {" "}
         <div className={styles.card}>
           <h1 className={styles.title}>
             {t("voiceTest.title", "اختبار الصوت")}
