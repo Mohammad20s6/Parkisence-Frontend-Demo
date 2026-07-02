@@ -37,35 +37,57 @@
 .card .header {
   display: flex;
   align-items: center;
-  gap: 24px;
-  /* padding-bottom: 24px; */
-  border-bottom: 1px solid var(--text-secondary);
+  gap: 18px;
+  padding-bottom: 24px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--border);
 }
-
 .avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 16px;
-  /* background: linear-gradient(135deg, var(--primary), var(--primary)); */
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
-  font-weight: 600;
-  color: var(--text-primary);
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    color-mix(in srgb, var(--primary) 70%, white)
+  );
+
+  color: white;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.18),
+    0 0 0 6px rgba(255, 255, 255, 0.05);
+
+  transition: 0.35s;
 }
 
+.avatar:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.userIcon {
+  width: 34px;
+  height: 34px;
+}
 .username {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 4px;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
   color: var(--text-primary);
 }
 
 .email {
-  font-size: 14px;
+  margin-top: 4px;
   color: var(--text-secondary);
-  margin-top: 2px;
+  font-size: 15px;
+  word-break: break-word;
 }
 .message {
   color: var(--text-primary);
@@ -99,20 +121,30 @@
 
 .field input,
 .field select {
-  height: 40px;
-  padding: 0 12px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-  background: var(--bg-secondary);
-  font-size: 14px;
-  transition: 0.3s;
-}
+  width: 100%;
+  height: 48px;
 
+  padding: 0 16px;
+
+  border-radius: 12px;
+
+  border: 1px solid var(--border);
+
+  background: var(--bg-secondary);
+
+  color: var(--text-primary);
+
+  font-size: 15px;
+
+  transition: 0.25s;
+
+  box-sizing: border-box;
+}
 .field input:focus,
 .field select:focus {
-  outline: none;
   border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(61, 169, 252, 0.18);
+  outline: none;
 }
 
 .field input:disabled,
@@ -128,45 +160,147 @@
 
 .row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .actions {
   display: flex;
   justify-content: flex-end;
-  gap: 12px;
-  margin-top: 16px;
+  gap: 14px;
+  margin-top: 12px;
 }
+.primary,
+.cancel {
+  min-width: 150px;
 
-.primary {
-  height: 40px;
-  padding: 0 20px;
-  border-radius: 10px;
-  border: none;
+  height: 46px;
+
+  border-radius: 12px;
+
+  font-size: 15px;
+
   font-weight: 600;
-  cursor: pointer;
-  background: var(--primary);
-  color: var(--bg-card);
-  transition: background 0.3s;
-}
 
+  transition: 0.25s;
+
+  cursor: pointer;
+}
 .primary:hover {
   background: var(--primary-hover);
 }
+.primary {
+  background: var(--primary);
 
-.cancel {
-  height: 40px;
-  padding: 0 20px;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-  background: var(--bg-primary);
-  cursor: pointer;
-  transition: all 0.4s;
+  color: white;
+
+  border: none;
 }
+
+.primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.cancel {
+  background: transparent;
+
+  border: 1px solid var(--border);
+
+  color: var(--text-primary);
+}
+
 .cancel:hover {
-  color: var(--text-secondary);
   background: var(--bg-secondary);
-  cursor: pointer;
+}
+/* =========================================================
+   Responsive
+========================================================= */
+@media (max-width: 768px) {
+  .card {
+    padding: 24px;
+  }
+
+  .card .header {
+    align-items: center;
+
+    gap: 16px;
+  }
+
+  .avatar {
+    width: 62px;
+    height: 62px;
+    min-width: 62px;
+  }
+
+  .userIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .username {
+    font-size: 20px;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .primary,
+  .cancel {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .back {
+    margin-inline-start: 0;
+  }
+
+  .container {
+    padding: 0 14px;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .card .header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+  }
+
+  .userIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .username {
+    font-size: 18px;
+  }
+
+  .email {
+    font-size: 13px;
+  }
+
+  .field input,
+  .field select {
+    height: 46px;
+  }
+
+  .primary,
+  .cancel {
+    height: 46px;
+  }
 }

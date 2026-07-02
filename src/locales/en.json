@@ -1,7 +1,7 @@
 {
   "common": {
-    "logoFirstName" : "Parki",
-    "logoSecondName" : "Sense",
+    "logoFirstName": "Parki",
+    "logoSecondName": "Sense",
     "back": "Back",
     "cancel": "Cancel",
     "submit": "Submit",
@@ -42,6 +42,7 @@
     "faq": "FAQ",
     "feedback": "Feedback",
     "dashboard": "Dashboard",
+    "profile": "Profile",
     "login": "Login",
     "register": "Register",
     "logout": "Logout",

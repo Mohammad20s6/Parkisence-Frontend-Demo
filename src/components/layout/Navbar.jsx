@@ -16,6 +16,7 @@ import {
   HelpCircle,
   MessageSquare,
   LayoutDashboard,
+  User,
 } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
@@ -344,56 +345,6 @@ function Navbar() {
             </NavLink>
           )}
 
-          {/* {isHome ? (
-            <ScrollLink
-              to="features"
-              spy
-              smooth
-              offset={-80}
-              duration={400}
-              activeClass={styles.drawerActive}
-              className={styles.drawerItem}
-              onClick={() => setMobileOpen(false)}
-            >
-              <Sparkles size={22} />
-              <span>{t("navbar.features")}</span>
-            </ScrollLink>
-          ) : (
-            <NavLink
-              to="/#features"
-              className={styles.drawerItem}
-              onClick={() => setMobileOpen(false)}
-            >
-              <Sparkles size={22} />
-              <span>{t("navbar.features")}</span>
-            </NavLink>
-          )}
-
-          {isHome ? (
-            <ScrollLink
-              to="how"
-              spy
-              smooth
-              offset={-80}
-              duration={400}
-              activeClass={styles.drawerActive}
-              className={styles.drawerItem}
-              onClick={() => setMobileOpen(false)}
-            >
-              <Info size={22} />
-              <span>{t("navbar.how")}</span>
-            </ScrollLink>
-          ) : (
-            <NavLink
-              to="/#how"
-              className={styles.drawerItem}
-              onClick={() => setMobileOpen(false)}
-            >
-              <Info size={22} />
-              <span>{t("navbar.how")}</span>
-            </NavLink>
-          )} */}
-
           <NavLink
             to="/articles"
             className={({ isActive }) =>
@@ -426,6 +377,19 @@ function Navbar() {
             >
               <MessageSquare size={22} />
               <span>{t("navbar.feedback")}</span>
+            </NavLink>
+          )}
+
+          {isAuthenticated && (
+            <NavLink
+              to="/patient/profile"
+              className={({ isActive }) =>
+                `${styles.drawerItem} ${isActive ? styles.drawerActive : ""}`
+              }
+              onClick={() => setMobileOpen(false)}
+            >
+              <User size={22} />
+              <span>{t("navbar.profile")}</span>
             </NavLink>
           )}
 
